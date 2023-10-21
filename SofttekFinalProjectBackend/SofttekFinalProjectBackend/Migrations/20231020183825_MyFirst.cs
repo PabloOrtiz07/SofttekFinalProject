@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SofttekFinalProjectBackend.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class MyFirst : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,8 +33,8 @@ namespace SofttekFinalProjectBackend.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     cryptoAccount_uuid = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     cryptoAccount_description = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    account_amount = table.Column<int>(type: "int", nullable: false),
-                    account_sortofaccount = table.Column<int>(type: "int", nullable: false),
+                    account_mount = table.Column<double>(type: "float", nullable: false),
+                    account_typeOfaccount = table.Column<int>(type: "int", nullable: false),
                     account_user = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -57,8 +57,8 @@ namespace SofttekFinalProjectBackend.Migrations
                     fiduciaryAccount_cbu = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     fiduciaryAccount_alias = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     fiduciaryAccount_accountNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    account_amount = table.Column<int>(type: "int", nullable: false),
-                    account_sortofaccount = table.Column<int>(type: "int", nullable: false),
+                    account_mount = table.Column<double>(type: "float", nullable: false),
+                    account_typeOfaccount = table.Column<int>(type: "int", nullable: false),
                     account_user = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -79,18 +79,21 @@ namespace SofttekFinalProjectBackend.Migrations
 
             migrationBuilder.InsertData(
                 table: "cryptoAccount",
-                columns: new[] { "account_id", "account_amount", "cryptoAccount_description", "account_sortofaccount", "account_user", "cryptoAccount_uuid" },
-                values: new object[] { 1, 1000, "Bitcoin", 2, 1, "CryptoUUID1" });
-
-            migrationBuilder.InsertData(
-                table: "cryptoAccount",
-                columns: new[] { "account_id", "account_amount", "cryptoAccount_description", "account_sortofaccount", "account_user", "cryptoAccount_uuid" },
-                values: new object[] { 2, 1500, "Ethereum", 2, 1, "CryptoUUID2" });
+                columns: new[] { "account_id", "account_mount", "cryptoAccount_description", "account_typeOfaccount", "account_user", "cryptoAccount_uuid" },
+                values: new object[,]
+                {
+                    { 1, 1000.0, "Bitcoin", 2, 1, "CryptoUUID1" },
+                    { 2, 1500.0, "Ethereum", 2, 1, "CryptoUUID2" }
+                });
 
             migrationBuilder.InsertData(
                 table: "fiduciaryAccount",
-                columns: new[] { "account_id", "fiduciaryAccount_accountNumber", "fiduciaryAccount_alias", "account_amount", "fiduciaryAccount_cbu", "account_sortofaccount", "account_user" },
-                values: new object[] { 1, "12345", "Alias1", 500, "CBU1", 0, 1 });
+                columns: new[] { "account_id", "fiduciaryAccount_accountNumber", "fiduciaryAccount_alias", "fiduciaryAccount_cbu", "account_mount", "account_typeOfaccount", "account_user" },
+                values: new object[,]
+                {
+                    { 1, "12345", "Alias1", "CBU1", 500.0, 0, 1 },
+                    { 2, "54321", "Alias2", "CBU2", 1000.0, 1, 1 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_cryptoAccount_account_user",

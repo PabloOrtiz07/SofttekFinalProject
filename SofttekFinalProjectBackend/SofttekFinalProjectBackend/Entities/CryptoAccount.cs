@@ -13,6 +13,6 @@ namespace SofttekFinalProjectBackend.Entities
 
         [Required]
         [Column("cryptoAccount_description", TypeName = "VARCHAR(100)")]
-        public string Description { get; set; }
+        public string NameOfCrypto { get; set; }
     }
 }

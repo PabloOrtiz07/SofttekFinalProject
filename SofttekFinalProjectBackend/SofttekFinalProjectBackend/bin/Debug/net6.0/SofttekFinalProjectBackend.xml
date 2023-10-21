@@ -4,20 +4,5 @@
         <name>SofttekFinalProjectBackend</name>
     </assembly>
     <members>
-        <member name="M:SofttekFinalProjectBackend.Controllers.AuthorizeController.Login(SofttekFinalProjectBackend.DTOs.AuthenticateDTO)">
-            <summary>
-            asdfsdfsadfasfd
-            </summary>
-            <param name="authenticateDTO"></param>
-            <returns>asdfdsafdsaf</returns>
-            
-        </member>
-        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.GetById1(System.Int32)">
-            <summary>
-            HOLAAAAA
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
     </members>
 </doc>

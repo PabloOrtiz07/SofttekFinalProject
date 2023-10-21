@@ -12,8 +12,8 @@ using SofttekFinalProjectBackend.DataAccess;
 namespace SofttekFinalProjectBackend.Migrations
 {
     [DbContext(typeof(ContextDB))]
-    [Migration("20231019020526_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20231020183825_MyFirst")]
+    partial class MyFirst
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,18 +33,18 @@ namespace SofttekFinalProjectBackend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int")
-                        .HasColumnName("account_amount");
+                    b.Property<double>("Mount")
+                        .HasColumnType("float")
+                        .HasColumnName("account_mount");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("NameOfCrypto")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnName("cryptoAccount_description");
 
-                    b.Property<int>("Status")
+                    b.Property<int>("TypeOfAccount")
                         .HasColumnType("int")
-                        .HasColumnName("account_sortofaccount");
+                        .HasColumnName("account_typeOfaccount");
 
                     b.Property<int?>("UserId")
                         .IsRequired()
@@ -66,18 +66,18 @@ namespace SofttekFinalProjectBackend.Migrations
                         new
                         {
                             Id = 1,
-                            Amount = 1000,
-                            Description = "Bitcoin",
-                            Status = 2,
+                            Mount = 1000.0,
+                            NameOfCrypto = "Bitcoin",
+                            TypeOfAccount = 2,
                             UserId = 1,
                             Uuid = "CryptoUUID1"
                         },
                         new
                         {
                             Id = 2,
-                            Amount = 1500,
-                            Description = "Ethereum",
-                            Status = 2,
+                            Mount = 1500.0,
+                            NameOfCrypto = "Ethereum",
+                            TypeOfAccount = 2,
                             UserId = 1,
                             Uuid = "CryptoUUID2"
                         });
@@ -102,18 +102,18 @@ namespace SofttekFinalProjectBackend.Migrations
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnName("fiduciaryAccount_alias");
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int")
-                        .HasColumnName("account_amount");
-
                     b.Property<string>("Cbu")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnName("fiduciaryAccount_cbu");
 
-                    b.Property<int>("Status")
+                    b.Property<double>("Mount")
+                        .HasColumnType("float")
+                        .HasColumnName("account_mount");
+
+                    b.Property<int>("TypeOfAccount")
                         .HasColumnType("int")
-                        .HasColumnName("account_sortofaccount");
+                        .HasColumnName("account_typeOfaccount");
 
                     b.Property<int?>("UserId")
                         .IsRequired()
@@ -132,9 +132,19 @@ namespace SofttekFinalProjectBackend.Migrations
                             Id = 1,
                             AccountNumber = "12345",
                             Alias = "Alias1",
-                            Amount = 500,
                             Cbu = "CBU1",
-                            Status = 0,
+                            Mount = 500.0,
+                            TypeOfAccount = 0,
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountNumber = "54321",
+                            Alias = "Alias2",
+                            Cbu = "CBU2",
+                            Mount = 1000.0,
+                            TypeOfAccount = 1,
                             UserId = 1
                         });
                 });
@@ -185,24 +195,20 @@ namespace SofttekFinalProjectBackend.Migrations
 
             modelBuilder.Entity("SofttekFinalProjectBackend.Entities.CryptoAccount", b =>
                 {
-                    b.HasOne("SofttekFinalProjectBackend.Entities.User", "User")
+                    b.HasOne("SofttekFinalProjectBackend.Entities.User", null)
                         .WithMany("CryptoAccounts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SofttekFinalProjectBackend.Entities.FiduciaryAccount", b =>
                 {
-                    b.HasOne("SofttekFinalProjectBackend.Entities.User", "User")
+                    b.HasOne("SofttekFinalProjectBackend.Entities.User", null)
                         .WithMany("FiduciaryAccounts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SofttekFinalProjectBackend.Entities.User", b =>

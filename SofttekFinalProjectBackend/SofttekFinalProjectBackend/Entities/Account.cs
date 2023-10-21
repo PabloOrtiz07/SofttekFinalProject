@@ -10,25 +10,24 @@ namespace SofttekFinalProjectBackend.Entities
         public int Id { get; set; }
 
         [Required]
-        [Column("account_amount")]
-        public int Amount
+        [Column("account_mount")]
+        public double Mount
         {
             get; set;
         }
 
         [Required]
-        [Column("account_sortofaccount")]
-        public SortOfAccount Status { get; set; }
+        [Column("account_typeOfaccount")]
+        public TypeOfAccount TypeOfAccount { get; set; }
 
         [Required]
         [Column("account_user")]
         [ForeignKey("UserId")]
         public int? UserId { get; set; }
-        public User User { get; set; }
 
     }
 
-    public enum SortOfAccount
+    public enum TypeOfAccount
     {
         Pesos,
         Dollar,

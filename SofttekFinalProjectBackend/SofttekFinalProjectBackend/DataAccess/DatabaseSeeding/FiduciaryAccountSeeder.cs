@@ -13,14 +13,25 @@ namespace SofttekFinalProjectBackend.DataAccess.DatabaseSeeding
                 new FiduciaryAccount
                 {
                     Id = 1,
-                    Amount = 500,
-                    Status = SortOfAccount.Pesos,
+                    Mount = 500,  
+                    TypeOfAccount = TypeOfAccount.Pesos,
                     Cbu = "CBU1",
                     Alias = "Alias1",
                     AccountNumber = "12345",
+                    UserId = 1
+                },
+                new FiduciaryAccount
+                {
+                    Id = 2,
+                    Mount = 1000, 
+                    TypeOfAccount = TypeOfAccount.Dollar,
+                    Cbu = "CBU2",
+                    Alias = "Alias2",
+                    AccountNumber = "54321",
                     UserId = 1
                 }
             );
         }
     }
 }
+
