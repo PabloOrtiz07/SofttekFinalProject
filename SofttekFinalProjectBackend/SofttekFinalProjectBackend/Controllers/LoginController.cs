@@ -10,50 +10,18 @@ namespace SofttekFinalProjectBackend.Controllers
     [ApiController]
     public class AuthorizeController : ControllerBase
     {
-        private TokenJwtHelper _tokenJwtHelper;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly UsersServices _services;
 
         public AuthorizeController(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
-            _unitOfWork = unitOfWork;
-            _tokenJwtHelper = new TokenJwtHelper(configuration);
+            _services = new UsersServices( unitOfWork ,configuration);
         }
 
-   /// <summary>
-   /// 
-   /// </summary>
-   /// <param name="authenticateDTO"></param>
-   /// <returns></returns>
-   /// 
-
-   [HttpPost]
-    public async Task<IActionResult> Login(AuthenticateDTO authenticateDTO)
-    {
-        try
-            {
-                var userCredentials = await _unitOfWork.UserRepository.AuthenticateCredentials(authenticateDTO);
-                if (userCredentials is null)
-                {
-                    return null;
-                }
-
-                var token = _tokenJwtHelper.GenerateToken(userCredentials);
-
-                var user = new UserLoginDTO()
-                {
-                    Email = userCredentials.Email,
-                    Token = token
-                };
-                return Ok(user);
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-
-            }
-
-
+        [HttpPost]
+        public async Task<IActionResult> Login(AuthenticateDTO authenticateDTO)
+        {
+            return await _services.UserLogin(authenticateDTO);
         }
     }
+
 }

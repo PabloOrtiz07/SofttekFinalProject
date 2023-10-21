@@ -11,19 +11,19 @@ namespace SofttekFinalProjectBackend.DataAccess.DatabaseSeeding
                 new CryptoAccount
                 {
                     Id = 1,
-                    Amount = 1000,
-                    Status = SortOfAccount.Crypto,
+                    Mount = 1000,
+                    TypeOfAccount = TypeOfAccount.Crypto,
                     Uuid = "CryptoUUID1",
-                    Description = "Bitcoin",
+                    NameOfCrypto = "Bitcoin",
                     UserId = 1
                 },
                 new CryptoAccount
                 {
                     Id = 2,
-                    Amount = 1500,
-                    Status = SortOfAccount.Crypto,
+                    Mount = 1500,
+                    TypeOfAccount = TypeOfAccount.Crypto,
                     Uuid = "CryptoUUID2",
-                    Description = "Ethereum",
+                    NameOfCrypto = "Ethereum",
                     UserId = 1
                 }
             );

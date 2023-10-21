@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SofttekFinalProjectBackend.DataAccess;
+using SofttekFinalProjectBackend.Logic;
 using SofttekFinalProjectBackend.Services;
 using System.Reflection;
 using System.Security.Claims;
@@ -59,6 +60,8 @@ builder.Services.AddDbContext<ContextDB>(options =>
 //Apply  dependency injection
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWorkService>();
+builder.Services.AddScoped<GestorOfOperation, GestorOfOperation>();
+
 //Apply AutoMapper
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

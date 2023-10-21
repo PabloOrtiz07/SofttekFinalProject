@@ -16,7 +16,7 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
             _mapper = mapper;
         }
 
-        public async Task<UserDTO> GetUserById(int id)
+        public async Task<User> GetUserById(int id)
         {
             try
             {
@@ -28,10 +28,10 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
 
                 if (user != null)
                 {
-                   return _mapper.Map<UserDTO>(user);
-                    
+                    return user;
+
                 }
-      
+
                 return null;
 
             }
@@ -40,6 +40,27 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
                 return null;
             }
         }
+
+        public async Task<UserDTO> GetUserDTOById(int id)
+        {
+            try
+            {
+               UserDTO  user =  _mapper.Map<UserDTO>(await GetUserById(id));
+
+                if (user != null)
+                {
+                    return user;
+
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public async Task<User?> AuthenticateCredentials(AuthenticateDTO dto)
         {
 
