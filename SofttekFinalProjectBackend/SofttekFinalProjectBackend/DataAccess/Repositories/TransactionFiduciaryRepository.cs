@@ -17,11 +17,15 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
         {
             try
             {
+                cbu = cbu.ToLower();
+                alias = alias.ToLower(); 
+                accountNumber = accountNumber.ToLower(); 
+
                 var entity = await _contextDB.Set<TransactionFiduciary>()
                     .FirstOrDefaultAsync(transaction =>
-                        transaction.Cbu == cbu &&
-                        transaction.Alias == alias &&
-                        transaction.AccountNumber == accountNumber);
+                        transaction.Cbu.ToLower() == cbu ||
+                        transaction.Alias.ToLower() == alias ||
+                        transaction.AccountNumber.ToLower() == accountNumber);
 
                 return entity;
             }
@@ -32,25 +36,30 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
         }
 
 
+
+
         public virtual async Task<int> GetIdAccount(string cbu)
         {
             try
             {
+                cbu = cbu.ToLower(); 
+
                 TransactionFiduciary entity = await _contextDB.Set<TransactionFiduciary>()
-                    .FirstOrDefaultAsync(transaction => transaction.Cbu == cbu);
+                    .FirstOrDefaultAsync(transaction => transaction.Cbu.ToLower() == cbu);
+
                 if (entity != null)
                 {
                     return entity.Id;
                 }
 
                 return -1;
-
             }
             catch (Exception)
             {
                 return -1;
             }
         }
+
 
     }
 }

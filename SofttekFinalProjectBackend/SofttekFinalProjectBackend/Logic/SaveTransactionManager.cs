@@ -28,7 +28,10 @@ namespace SofttekFinalProjectBackend.Logic
                 {
                     FiduciaryAccount accountFinding 
                         = await _unitOfWork.FiduciaryAccountRepository.GetAccount(withDrawMoneyFiduciary.Cbu, withDrawMoneyFiduciary.Alias, withDrawMoneyFiduciary.AccountNumber);
-
+                    if (accountFinding == null)
+                    {
+                        return false;
+                    }
                     result = new TransactionFiduciary
                     {
                         Cbu = accountFinding.Cbu,
@@ -68,7 +71,10 @@ namespace SofttekFinalProjectBackend.Logic
                 if (result == null)
                 {
                     CryptoAccount accountFinding = await _unitOfWork.CryptoAccountRepository.GetByUuid(withDrawMoneyCrypto.Uuid);
-
+                    if (accountFinding == null)
+                    {
+                        return false;
+                    }
                     result = new TransactionCrypto
                     {
                         Uuid = accountFinding.Uuid
@@ -109,7 +115,10 @@ namespace SofttekFinalProjectBackend.Logic
                 {
                     FiduciaryAccount accountFinding
                         = await _unitOfWork.FiduciaryAccountRepository.GetAccount(depositFiduciary.Cbu, depositFiduciary.Alias, depositFiduciary.AccountNumber);
-
+                    if(accountFinding == null)
+                    {
+                        return false;
+                    }
                     result = new TransactionFiduciary
                     {
                         Cbu = accountFinding.Cbu,
@@ -150,7 +159,10 @@ namespace SofttekFinalProjectBackend.Logic
                 if (result == null)
                 {
                     CryptoAccount accountFinding = await _unitOfWork.CryptoAccountRepository.GetByUuid(depositCrypto.Uuid);
-
+                    if (accountFinding == null)
+                    {
+                        return false;
+                    }
                     result = new TransactionCrypto
                     {
                         Uuid = accountFinding.Uuid
