@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace SofttekFinalProjectBackend.Entities
 {
-    [Table("cryptoAccount")]
+    [Table("cryptoAccounts")]
+    [Index(nameof(Uuid), IsUnique = true)]
 
     public class CryptoAccount : Account
     {

@@ -32,15 +32,23 @@ namespace SofttekFinalProjectBackend.Entities
         [Column("user_deletedTimeUtc")]
         public DateTime? DeletedTimeUtc { get; set; }
 
-        [JsonIgnore]
-
         [Column("user_crytoAccount")]
         public ICollection<CryptoAccount> CryptoAccounts { get; set; }
-        [JsonIgnore]
  
         [Column("user_fiduciaryAccount")]
         public ICollection<FiduciaryAccount> FiduciaryAccounts { get; set; }
 
+        [Column("user_sales")]
+        public ICollection<Sale> Sales { get; set; }
+
+        [Column("user_transactions")]
+        public ICollection<Transaction> Transactions { get; set; }
+
+        [Required]
+        [Column("role_id")]
+        [ForeignKey("RoleId")]
+        public int RoleId { get; set; }
+        public Role? Role { get; set; }
 
     }
 }
