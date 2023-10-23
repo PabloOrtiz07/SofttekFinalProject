@@ -10,8 +10,8 @@ namespace SofttekFinalProjectBackend.Entities
         public int Id { get; set; }
 
         [Required]
-        [Column("account_mount")]
-        public double Mount
+        [Column("account_amount")]
+        public double Amount
         {
             get; set;
         }

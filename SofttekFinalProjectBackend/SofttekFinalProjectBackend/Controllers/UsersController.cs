@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SofttekFinalProjectBackend.DTOs;
-using SofttekFinalProjectBackend.Entities;
 using SofttekFinalProjectBackend.Services;
+using System.Reflection.Metadata;
 
 namespace SofttekFinalProjectBackend.Controllers
 {
@@ -24,38 +24,37 @@ namespace SofttekFinalProjectBackend.Controllers
         {
             return await _services.GetUserById(id);
 
-
         }
 
-        /*[HttpPost]
-        public async Task<IActionResult> Buy([FromRoute] int id)
+        [HttpPut("withdrawmoney/{id}")]
+        public async Task<IActionResult> WithdrawMoney([FromRoute] int id, WithDrawMoneyDTO withDrawMoneyDTO, int parameter=0)
         {
-            return null;
+            return await _services.WithDrawMoney(id, parameter, withDrawMoneyDTO);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Transfers([FromRoute] int id)
-        {
-            return null;
-        }*/
-
-        [HttpPost("transfersFiduciary/{id}")]
-        public async Task<IActionResult> TransfersFiduciaryAccount([FromRoute] int id, int parameter, TransferRequestFiduciaryDTO transferRequestFiduciaryDTO)
+        [HttpPut("transfers/{id}")]
+        public async Task<IActionResult> Transfers([FromRoute] int id, TransferRequestDTO transferRequestFiduciaryDTO, int parameter=0)
         {
             return  await _services.Transfers(id, parameter, transferRequestFiduciaryDTO);
         }
 
-        /*[HttpPost("depositFiduciary/{id}")]
-        public async Task<IActionResult> DepositFiduciaryAccount([FromRoute] int id, FiduciaryDepositDTO fiduciaryDepositOrigin)
-        {
-            return await _services.DepositFiduciaryAccount(id, fiduciaryDepositOrigin);
-        }*/
+         [HttpPut("deposit/{id}")]
+         public async Task<IActionResult> Deposit([FromRoute] int id, DepositRequestDTO depositRequest, int parameter = 0)
+         {
+             return await _services.Deposit(id, parameter, depositRequest);
+         }
 
-        [HttpPost("depositCrypto/{id}")]
-        public async Task<IActionResult> DepositCryptoAccount([FromRoute] int id, CryptoDepositDTO cryptoDepositDTO)
+        [HttpPost("sale/{id}")]
+        public async Task<IActionResult> Sale([FromRoute] int id, SaleRequestDTO saleRequest)
         {
-            return await _services.DepositCryptoAccount(id, cryptoDepositDTO);
-        }*/
+            return await _services.Sale(id, saleRequest);
+        }
+
+        [HttpPut("buy/{id}")]
+        public async Task<IActionResult> Buy([FromRoute] int id, int saleNumber)
+        {
+            return await _services.Buy(id, saleNumber);
+        }
 
     }
 }

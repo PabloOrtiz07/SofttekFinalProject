@@ -1,27 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SofttekFinalProjectBackend.DTOs;
 using SofttekFinalProjectBackend.Entities;
 using SofttekFinalProjectBackend.Infrastructure;
 
 namespace SofttekFinalProjectBackend.Logic
 {
-    public class Transfers
+    public class TransfersManager
     {
         private readonly AccountFinder _accountFinder;
         private readonly GestorOfOperation _gestorOfOperation;
 
-        public Transfers(AccountFinder accountFinder, GestorOfOperation gestorOfOperation)
+        public TransfersManager(AccountFinder accountFinder, GestorOfOperation gestorOfOperation)
         {
             _accountFinder = accountFinder;
             _gestorOfOperation = gestorOfOperation;
         }
 
-        public async Task<bool> TransfersOriginToDestination(User user, DepositFiduciaryDTO fiduciaryTransfersOrigin, TransfersFiduciaryDTO fiduciaryTransfersDestination)
+        public async Task<bool> TransfersOriginToDestination(User user, DepositFiduciary fiduciaryTransfersOrigin, TransfersFiduciary fiduciaryTransfersDestination)
         {
             try
             {
-                FiduciaryAccount matchingAccountOrigin = await _accountFinder.FindMatchingFiduciaryAccount(user.FiduciaryAccounts, fiduciaryTransfersOrigin);
-                FiduciaryAccount matchingAccountDestination = await _accountFinder.FindMatchingFiduciaryAccount(user.FiduciaryAccounts, fiduciaryTransfersDestination);
+                FiduciaryAccount matchingAccountOrigin = await _accountFinder.FindMatchingFiduciaryAccountAsync(user.FiduciaryAccounts, fiduciaryTransfersOrigin);
+                FiduciaryAccount matchingAccountDestination = await _accountFinder.FindMatchingFiduciaryAccountAsync(user.FiduciaryAccounts, fiduciaryTransfersDestination);
 
                 if (matchingAccountOrigin == null || matchingAccountDestination == null)
                 {
@@ -39,11 +38,11 @@ namespace SofttekFinalProjectBackend.Logic
             }
         }
 
-        public async Task<bool> TransfersOriginToDestination(User user, DepositFiduciaryDTO fiduciaryTransfersOrigin, TransfersCryptoDTO cryptoTransfersDestination)
+        public async Task<bool> TransfersOriginToDestination(User user, DepositFiduciary fiduciaryTransfersOrigin, TransfersCrypto cryptoTransfersDestination)
         {
             try
             {
-                FiduciaryAccount matchingAccountOrigin = await _accountFinder.FindMatchingFiduciaryAccount(user.FiduciaryAccounts, fiduciaryTransfersOrigin);
+                FiduciaryAccount matchingAccountOrigin = await _accountFinder.FindMatchingFiduciaryAccountAsync(user.FiduciaryAccounts, fiduciaryTransfersOrigin);
                 CryptoAccount matchingAccountDestination = await _accountFinder.FindMatchingCryptoAccountAsync(user.CryptoAccounts, cryptoTransfersDestination);
 
                 if (matchingAccountOrigin == null || matchingAccountDestination == null)
@@ -62,12 +61,12 @@ namespace SofttekFinalProjectBackend.Logic
             }
         }
 
-        public async Task<bool> TransfersOriginToDestination(User user, DepositCryptoDTO cryptoDepositOrigin, TransfersFiduciaryDTO fiduciaryTransfersDestination)
+        public async Task<bool> TransfersOriginToDestination(User user, DepositCrypto cryptoDepositOrigin, TransfersFiduciary fiduciaryTransfersDestination)
         {
             try
             {
                 CryptoAccount matchingAccountOrigin = await _accountFinder.FindMatchingCryptoAccountAsync(user.CryptoAccounts, cryptoDepositOrigin);
-                FiduciaryAccount matchingAccountDestination = await _accountFinder.FindMatchingFiduciaryAccount(user.FiduciaryAccounts, fiduciaryTransfersDestination);
+                FiduciaryAccount matchingAccountDestination = await _accountFinder.FindMatchingFiduciaryAccountAsync(user.FiduciaryAccounts, fiduciaryTransfersDestination);
 
                 if (matchingAccountOrigin == null || matchingAccountDestination == null)
                 {
@@ -85,14 +84,14 @@ namespace SofttekFinalProjectBackend.Logic
             }
         }
 
-        public async Task<bool> TransfersOriginToDestination(User user, DepositCryptoDTO cryptoDepositOrigin, TransfersCryptoDTO cryptoTransfersDestination)
+        public async Task<bool> TransfersOriginToDestination(User user, DepositCrypto cryptoDepositOrigin, TransfersCrypto cryptoTransfersDestination)
         {
             try
             {
                 CryptoAccount matchingAccountOrigin = await _accountFinder.FindMatchingCryptoAccountAsync(user.CryptoAccounts, cryptoDepositOrigin);
                 CryptoAccount matchingAccountDestination = await _accountFinder.FindMatchingCryptoAccountAsync(user.CryptoAccounts, cryptoTransfersDestination);
 
-                if (matchingAccountOrigin == null || matchingAccountDestination == null)
+                if (matchingAccountOrigin == null || matchingAccountDestination == null || matchingAccountOrigin.Uuid == matchingAccountDestination.Uuid)
                 {
                     return false;
                 }

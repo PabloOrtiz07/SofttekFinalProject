@@ -66,7 +66,7 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
 
             try
             {
-                return await _contextDB.Users.SingleOrDefaultAsync
+                return await _contextDB.Users.Include(user => user.Role).SingleOrDefaultAsync
                               (user => user.Email == dto.Email && user.Password == PasswordEncryptHelper.EncryptPassword(dto.Password, dto.Email));
             }
             catch (Exception)

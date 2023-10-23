@@ -27,8 +27,6 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
 
         }
 
-
-
         public virtual async Task<T> GetById(int id)
         {
             try

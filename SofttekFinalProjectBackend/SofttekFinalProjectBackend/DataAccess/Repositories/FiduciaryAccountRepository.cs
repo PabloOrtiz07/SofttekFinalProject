@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using SofttekFinalProjectBackend.DataAccess.Repositories.Interfaces;
 using SofttekFinalProjectBackend.Entities;
+using System.Security.Principal;
 
 namespace SofttekFinalProjectBackend.DataAccess.Repositories
 {
@@ -12,6 +14,54 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
         {
             _mapper = mapper;
 
+        }
+        public virtual async Task<List<FiduciaryAccount>> GetAllAccountInPesos()
+        {
+            try
+            {
+                var fiduciaryAccounts = await base.GetAll();
+
+                fiduciaryAccounts = fiduciaryAccounts.Where(fiduciaryAccount => fiduciaryAccount.TypeOfAccount == TypeOfAccount.Pesos).ToList();
+                return fiduciaryAccounts;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public virtual async Task<FiduciaryAccount> GetAccount(string cbu, string alias, string accountNumber)
+        {
+            try
+            {
+                var entity = await _contextDB.Set<FiduciaryAccount>()
+                    .FirstOrDefaultAsync(account =>
+                        account.Cbu == cbu &&
+                        account.Alias == alias &&
+                        account.AccountNumber == accountNumber);
+
+                return entity;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public virtual async Task<FiduciaryAccount> GetAccountInPesos(int userId)
+        {
+            try
+            {
+                var entity = await _contextDB.Set<FiduciaryAccount>()
+                    .FirstOrDefaultAsync(account =>
+                        account.UserId == userId &&
+                        account.TypeOfAccount == TypeOfAccount.Pesos);
+
+                return entity;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
     }

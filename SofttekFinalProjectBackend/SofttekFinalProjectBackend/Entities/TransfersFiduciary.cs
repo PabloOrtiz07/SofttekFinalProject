@@ -1,13 +1,13 @@
-﻿namespace SofttekFinalProjectBackend.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SofttekFinalProjectBackend.Entities
 {
-    public class DepositFiduciaryDTO : DepositDTO
+    public class TransfersFiduciary
     {
-        
         public string Cbu { get; set; }
 
         public string Alias { get; set; }
 
         public string AccountNumber { get; set; }
-
     }
 }

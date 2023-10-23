@@ -16,20 +16,5 @@ namespace SofttekFinalProjectBackend.Mapper
 
             CreateMap<User, UserDTO>();
         }
-
-        private TypeOfAccount MapAccountStringToEnum(string type)
-        {
-            switch (type.ToLower())
-            {
-                case "pesos":
-                    return TypeOfAccount.Pesos;
-                case "dollar":
-                    return TypeOfAccount.Dollar;
-                case "crypto":
-                    return TypeOfAccount.Crypto;
-                default:
-                    throw new ArgumentException($"Invalid type of account string: {type}");
-            }
-        }
     }
 }

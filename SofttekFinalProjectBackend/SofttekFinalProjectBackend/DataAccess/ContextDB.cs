@@ -13,18 +13,28 @@ namespace SofttekFinalProjectBackend.DataAccess
 
 
         public DbSet<User> Users { get; set; }
-        public DbSet<CryptoAccount> CryptoAccount { get; set; }
-        public DbSet<FiduciaryAccount> FiduciaryAccount { get; set; }
+        public DbSet<CryptoAccount> CryptoAccounts { get; set; }
+        public DbSet<FiduciaryAccount> FiduciaryAccounts { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             var seeders = new List<IEntitySeeder>
-            {
+
+            {   new RoleSeeder(),
                 new UserSeeder(),
                 new CryptoAccountSeeder(),
-                new FiduciaryAccountSeeder()
+                new FiduciaryAccountSeeder(),
+                new SaleSeeder(),
+                new TransactionCryptoSeeder(),
+                new TransactionFiduciarySeeder(),
+                new TransactionSeeder()
+
+
+
 
 
             };

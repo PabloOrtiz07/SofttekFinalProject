@@ -1,5 +1,4 @@
-﻿using SofttekFinalProjectBackend.DTOs;
-using SofttekFinalProjectBackend.Entities;
+﻿using SofttekFinalProjectBackend.Entities;
 
 namespace SofttekFinalProjectBackend.Logic
 {
@@ -11,89 +10,175 @@ namespace SofttekFinalProjectBackend.Logic
         {
             _conversionManager = conversionManager;
         }
-
-        public async Task<double> CalculateConvertedAmountFiduciary(FiduciaryAccount matchingAccount, DepositCryptoDTO cryptoDeposit)
+        public async Task<double> CalculateConvertedAmountFiduciary(FiduciaryAccount matchingAccount, WithDrawMoneyCrypto withDrawMoneyCrypto)
         {
-            double convertedAmount = 0;
-
-            switch (matchingAccount.TypeOfAccount)
+            try
             {
-                case TypeOfAccount.Pesos when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto:
-                    double dollar = await _conversionManager.ConvertCryptoToDollar(cryptoDeposit.NameOfCrypto.ToLower(), cryptoDeposit.Mount);
-                    convertedAmount = await _conversionManager.ConvertDollarToPesos(dollar);
-                    break;
+                double convertedAmount = 0;
 
-                case TypeOfAccount.Dollar when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto:
-                    convertedAmount = await _conversionManager.ConvertCryptoToDollar(cryptoDeposit.NameOfCrypto.ToLower(), cryptoDeposit.Mount);
-                    break;
+                double dollar = await _conversionManager.ConvertCryptoToDollar(withDrawMoneyCrypto.NameOfCrypto.ToLower(), withDrawMoneyCrypto.Amount);
+                convertedAmount = await _conversionManager.ConvertDollarToPesos(dollar);
+
+
+
+                return convertedAmount;
             }
-
-            return convertedAmount;
+            catch (Exception ex)
+            {
+                throw; 
+            }
         }
 
-        public async Task<double> CalculateConvertedAmountFiduciary(FiduciaryAccount matchingAccount, DepositFiduciaryDTO fiduciaryDeposit)
+        public async Task<double> CalculateConvertedAmountFiduciary(FiduciaryAccount matchingAccount, DepositCrypto cryptoDeposit)
         {
-            double convertedAmount = 0;
-
-            switch (matchingAccount.TypeOfAccount)
+            try
             {
-                case TypeOfAccount.Pesos when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
-                    convertedAmount = await _conversionManager.ConvertDollarToPesos(fiduciaryDeposit.Mount);
-                    break;
+                double convertedAmount = 0;
 
-                case TypeOfAccount.Dollar when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
-                    convertedAmount = await _conversionManager.ConvertPesosToDollar(fiduciaryDeposit.Mount);
-                    break;
+                switch (matchingAccount.TypeOfAccount)
+                {
+                    case TypeOfAccount.Pesos when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto:
+                        double dollar = await _conversionManager.ConvertCryptoToDollar(cryptoDeposit.NameOfCrypto.ToLower(), cryptoDeposit.Amount);
+                        convertedAmount = await _conversionManager.ConvertDollarToPesos(dollar);
+                        break;
 
-                case TypeOfAccount.Pesos when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
-                    convertedAmount = fiduciaryDeposit.Mount;
-                    break;
+                    case TypeOfAccount.Dollar when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto:
+                        convertedAmount = await _conversionManager.ConvertCryptoToDollar(cryptoDeposit.NameOfCrypto.ToLower(), cryptoDeposit.Amount);
+                        break;
+                }
 
-                case TypeOfAccount.Dollar when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
-                    convertedAmount = fiduciaryDeposit.Mount;
-                    break;
-
+                return convertedAmount;
             }
-
-            return convertedAmount;
+            catch (Exception ex)
+            {
+               
+                throw; 
+            }
         }
 
-        public async Task<double> CalculateConvertedAmountCrypto(CryptoAccount matchingAccount, DepositFiduciaryDTO fiduciaryDeposit)
+        public async Task<double> CalculateConvertedAmountFiduciary(FiduciaryAccount matchingAccount, DepositFiduciary fiduciaryDeposit)
         {
-            double convertedAmount = 0;
-
-            double dollar = 0;
-
-            switch (matchingAccount.TypeOfAccount)
+            try
             {
-                case TypeOfAccount.Crypto when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
-                    convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), fiduciaryDeposit.Mount);
-                    break;
+                double convertedAmount = 0;
 
-                case TypeOfAccount.Crypto when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
-                    dollar = await _conversionManager.ConvertPesosToDollar(fiduciaryDeposit.Mount);
-                    convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), fiduciaryDeposit.Mount);
-                    break;
+                switch (matchingAccount.TypeOfAccount)
+                {
+                    case TypeOfAccount.Pesos when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
+                        convertedAmount = await _conversionManager.ConvertDollarToPesos(fiduciaryDeposit.Amount);
+                        break;
+
+                    case TypeOfAccount.Dollar when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
+                        convertedAmount = await _conversionManager.ConvertPesosToDollar(fiduciaryDeposit.Amount);
+                        break;
+
+                    case TypeOfAccount.Pesos when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
+                        convertedAmount = fiduciaryDeposit.Amount;
+                        break;
+
+                    case TypeOfAccount.Dollar when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
+                        convertedAmount = fiduciaryDeposit.Amount;
+                        break;
+
+                    case TypeOfAccount.Pesos when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Crypto:
+                        double dollar = await _conversionManager.ConvertCryptoToDollar(fiduciaryDeposit.NameOfCrypto.ToLower(), fiduciaryDeposit.Amount);
+                        convertedAmount = await _conversionManager.ConvertDollarToPesos(dollar);
+                        break;
+
+                    case TypeOfAccount.Dollar when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Crypto:
+                        convertedAmount = await _conversionManager.ConvertCryptoToDollar(fiduciaryDeposit.NameOfCrypto.ToLower(), fiduciaryDeposit.Amount);
+                        break;
+                }
+
+                return convertedAmount;
             }
-
-            return convertedAmount;
+            catch (Exception ex)
+            {
+                throw; 
+            }
         }
 
-        public async Task<double> CalculateConvertedAmountCrypto(CryptoAccount matchingAccount, DepositCryptoDTO cryptoDeposit)
+        public async Task<double> CalculateConvertedAmountCrypto(Sale saleRequest)
         {
-            double convertedAmount = 0;
-
-            double dollar = 0;
-
-            switch (matchingAccount.TypeOfAccount)
+            try
             {
-                case TypeOfAccount.Crypto when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto && matchingAccount.NameOfCrypto != cryptoDeposit.NameOfCrypto:
-                    dollar = await _conversionManager.ConvertCryptoToDollar(cryptoDeposit.NameOfCrypto.ToLower(), cryptoDeposit.Mount);
-                    convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), dollar);
-                    break;
-            }
+                double convertedAmount = 0;
 
-            return convertedAmount;
+                double dollar = await _conversionManager.ConvertCryptoToDollar(saleRequest.NameOfCrypto.ToLower(), saleRequest.Amount);
+                convertedAmount = await _conversionManager.ConvertDollarToPesos(dollar);
+                return convertedAmount;
+            }
+            catch (Exception ex)
+            {
+               
+                throw; 
+            }
         }
+
+        public async Task<double> CalculateConvertedAmountCrypto(CryptoAccount matchingAccount, DepositFiduciary fiduciaryDeposit)
+        {
+            try
+            {
+                double convertedAmount = 0;
+
+                double dollar = 0;
+
+                switch (matchingAccount.TypeOfAccount)
+                {
+                    case TypeOfAccount.Crypto when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
+                        convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), fiduciaryDeposit.Amount);
+                        break;
+
+                    case TypeOfAccount.Crypto when fiduciaryDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
+                        dollar = await _conversionManager.ConvertPesosToDollar(fiduciaryDeposit.Amount);
+                        convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), dollar);
+                        break;
+                }
+
+                return convertedAmount;
+            }
+            catch (Exception ex)
+            {
+               
+                throw; 
+            }
+        }
+
+        public async Task<double> CalculateConvertedAmountCrypto(CryptoAccount matchingAccount, DepositCrypto cryptoDeposit)
+        {
+            try
+            {
+                double convertedAmount = 0;
+
+                double dollar = 0;
+
+                switch (matchingAccount.TypeOfAccount)
+                {
+                    case TypeOfAccount.Crypto when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto && string.Equals(matchingAccount.NameOfCrypto.ToLower(), cryptoDeposit.NameOfCrypto.ToLower(), StringComparison.OrdinalIgnoreCase):
+                        convertedAmount = cryptoDeposit.Amount;
+                        break;
+
+                    case TypeOfAccount.Crypto when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Crypto && !string.Equals(matchingAccount.NameOfCrypto.ToLower(), cryptoDeposit.NameOfCrypto.ToLower(), StringComparison.OrdinalIgnoreCase):
+                        dollar = await _conversionManager.ConvertCryptoToDollar(cryptoDeposit.NameOfCrypto.ToLower(), cryptoDeposit.Amount);
+                        convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), dollar);
+                        break;
+                    case TypeOfAccount.Crypto when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Dollar:
+                        convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), cryptoDeposit.Amount);
+                        break;
+
+                    case TypeOfAccount.Crypto when cryptoDeposit.TypeOfDeposit == TypeOfAccount.Pesos:
+                        dollar = await _conversionManager.ConvertPesosToDollar(cryptoDeposit.Amount);
+                        convertedAmount = await _conversionManager.ConvertDollarToCrypto(matchingAccount.NameOfCrypto.ToLower(), dollar);
+                        break;
+                }
+
+                return convertedAmount;
+            }
+            catch (Exception ex)
+            {
+                throw; 
+            }
+        }
+
     }
 }

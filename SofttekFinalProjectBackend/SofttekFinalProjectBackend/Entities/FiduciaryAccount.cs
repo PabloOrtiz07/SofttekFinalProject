@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace SofttekFinalProjectBackend.Entities
 {
-    [Table("fiduciaryAccount")]
+    [Table("fiduciaryAccounts")]
+    [Index(nameof(Cbu), IsUnique = true)]
+    [Index(nameof(Alias), IsUnique = true)]
+    [Index(nameof(AccountNumber), IsUnique = true)]
 
     public class FiduciaryAccount : Account
     {

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SofttekFinalProjectBackend.DataAccess;
 using SofttekFinalProjectBackend.DataAccess.Repositories;
+using SofttekFinalProjectBackend.Entities;
 
 namespace SofttekFinalProjectBackend.Services
 {
@@ -16,6 +17,12 @@ namespace SofttekFinalProjectBackend.Services
 
         public CryptoAccountRepository CryptoAccountRepository { get; set; }
 
+        public SaleRepository SaleRepository { get; set; }
+
+        public TransactionRepository TransactionRepository { get; set; }
+        public TransactionCryptoRepository TransactionCryptoRepository { get; set; }
+        public TransactionFiduciaryRepository TransactionFiduciaryRepository { get; set; }
+
 
         public UnitOfWorkService(ContextDB contextDB, IMapper mapper)
         {
@@ -24,6 +31,12 @@ namespace SofttekFinalProjectBackend.Services
             UserRepository = new UserRepository(_contextDB, _mapper);
             FiduciaryAccountRepository = new FiduciaryAccountRepository(_contextDB, _mapper);
             CryptoAccountRepository = new CryptoAccountRepository(_contextDB, _mapper);
+            SaleRepository = new SaleRepository(_contextDB, _mapper);
+            TransactionRepository = new TransactionRepository(_contextDB, _mapper);
+            TransactionCryptoRepository = new TransactionCryptoRepository(_contextDB, _mapper);
+            TransactionFiduciaryRepository = new TransactionFiduciaryRepository(_contextDB, _mapper);
+
+
 
         }
 

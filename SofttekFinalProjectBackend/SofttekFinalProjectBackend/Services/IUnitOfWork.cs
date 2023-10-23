@@ -11,6 +11,10 @@ namespace SofttekFinalProjectBackend.Services
 
         public CryptoAccountRepository CryptoAccountRepository { get; }
 
+        public SaleRepository SaleRepository { get; }
+        public TransactionRepository TransactionRepository { get; }
+        public TransactionCryptoRepository TransactionCryptoRepository { get; }
+        public TransactionFiduciaryRepository TransactionFiduciaryRepository { get; }
 
         public Task<int> Complete();
 
