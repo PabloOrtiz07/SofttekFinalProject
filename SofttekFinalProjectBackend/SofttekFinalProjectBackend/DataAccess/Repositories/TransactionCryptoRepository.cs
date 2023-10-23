@@ -18,40 +18,41 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
         {
             try
             {
+                uuid = uuid.ToLower();
+
                 var entity = await _contextDB.Set<TransactionCrypto>()
-                    .FirstOrDefaultAsync(transaction => transaction.Uuid == uuid);
-                if (entity != null)
-                {
-                    return entity;
-                }
+                    .FirstOrDefaultAsync(transaction => transaction.Uuid.ToLower() == uuid);
 
-                return null;
-
+                return entity; 
             }
             catch (Exception)
             {
                 return null;
             }
         }
+
         public virtual async Task<int> GetIdAccount(string uuid)
         {
             try
             {
+                uuid = uuid.ToLower(); 
+
                 TransactionCrypto entity = await _contextDB.Set<TransactionCrypto>()
-                          .FirstOrDefaultAsync(transaction => transaction.Uuid == uuid);
+                    .FirstOrDefaultAsync(transaction => transaction.Uuid.ToLower() == uuid);
+
                 if (entity != null)
                 {
                     return entity.Id;
                 }
 
                 return -1;
-
             }
             catch (Exception)
             {
                 return -1;
             }
         }
+
 
     }
 }
