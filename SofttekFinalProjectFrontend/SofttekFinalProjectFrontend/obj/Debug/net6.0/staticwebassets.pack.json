@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\Login\\Login.css"
     },
     {
+      "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\css\\custom-styles.css",
+      "PackagePath": "staticwebassets\\css\\custom-styles.css"
+    },
+    {
       "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\images\\refinery-514010_1280.jpg",
       "PackagePath": "staticwebassets\\images\\refinery-514010_1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Accounts\\Accounts.js",
+      "PackagePath": "staticwebassets\\js\\Accounts\\Accounts.js"
     },
     {
       "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Home\\Home.js",
