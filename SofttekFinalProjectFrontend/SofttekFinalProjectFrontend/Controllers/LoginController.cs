@@ -55,7 +55,7 @@ namespace SofttekFinalProjectFrontend.Controllers
                 }
                 else
                 {
-                    claimRole = new Claim(ClaimTypes.Role, "Consultant");
+                    claimRole = new Claim(ClaimTypes.Role, "User");
                 }
 
                 identity.AddClaim(claimName);

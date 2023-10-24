@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wH1eWjxtUuIPvy1UnHpUyxwBSBTTADz1mgY4B1rWW0M=",
+  "Hash": "zGVthgKaWOg8dSLTCuUb6fWxDEIxqezBRU5I8yJLflg=",
   "Source": "SofttekFinalProjectFrontend",
   "BasePath": "_content/SofttekFinalProjectFrontend",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SofttekFinalProjectFrontend.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\css\\custom-styles.css",
+      "SourceId": "SofttekFinalProjectFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\",
+      "BasePath": "_content/SofttekFinalProjectFrontend",
+      "RelativePath": "css/custom-styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\custom-styles.css"
     },
     {
       "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\css\\Login\\Login.css",
@@ -168,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\refinery-514010_1280.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Accounts\\Accounts.js",
+      "SourceId": "SofttekFinalProjectFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\",
+      "BasePath": "_content/SofttekFinalProjectFrontend",
+      "RelativePath": "js/Accounts/Accounts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Accounts\\Accounts.js"
     },
     {
       "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Home\\Home.js",
