@@ -72,6 +72,8 @@ namespace SofttekFinalProjectFrontend.Controllers
 
                 var homeViewModel = new HomeViewModel();
                 homeViewModel.Token = responseObject.Data.Token;
+                homeViewModel.Id = responseObject.Data.Id;
+
 
                 return View("~/Views/Home/Index.cshtml", homeViewModel);
             }

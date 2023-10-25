@@ -1335,6 +1335,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.Extensions.Http": "7.0.0"
         },
@@ -4366,6 +4367,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Data >= 1.0.0",
+      "Microsoft.AspNetCore.Mvc.Abstractions >= 2.2.0",
       "System.IdentityModel.Tokens.Jwt >= 7.0.3"
     ]
   },
@@ -4412,6 +4414,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Abstractions": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[7.0.3, )"

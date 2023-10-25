@@ -53,6 +53,7 @@ namespace SofttekFinalProjectBackend.Services
 
                 var user = new UserLoginDTO()
                 {
+                    Id = userCredentials.Id,
                     Email = userCredentials.Email,
                     Token = token
                 };
@@ -172,7 +173,6 @@ namespace SofttekFinalProjectBackend.Services
                 bool result = false;
 
 
-
                 if (user == null)
                 {
                     return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
@@ -182,7 +182,7 @@ namespace SofttekFinalProjectBackend.Services
                 {
 
                     result = await _withDrawManager.WithDraw(user, withDrawMoneyDTO.WithDrawMoneyFiduciary);
-                    result = await _saveTransactionManager.SaveTransactionWithDraw(user.Id,withDrawMoneyDTO.WithDrawMoneyFiduciary);
+                    result = await _saveTransactionManager.SaveTransactionWithDraw(user.Id, withDrawMoneyDTO.WithDrawMoneyFiduciary);
 
                 }
 
@@ -208,8 +208,7 @@ namespace SofttekFinalProjectBackend.Services
                 return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
             }
         }
-
-        public async Task<IActionResult> Deposit(int id ,int parameter, DepositRequestDTO depositRequest)
+        public async Task<IActionResult> Deposit(int id, int parameter, DepositRequestDTO depositRequest)
         {
             try
             {
@@ -218,14 +217,14 @@ namespace SofttekFinalProjectBackend.Services
 
                 bool result = false;
 
-               
+
 
                 if (user == null)
                 {
                     return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
                 }
 
-                if( parameter == 0)
+                if (parameter == 0)
                 {
                     DepositFiduciary fiduciaryAccount = depositRequest.DepositFiduciary;
                     result = await _depositManager.Deposit(user, fiduciaryAccount);
@@ -255,7 +254,6 @@ namespace SofttekFinalProjectBackend.Services
                 return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
             }
         }
-
         public async Task<IActionResult> Transfers(int id, int parameter, TransferRequestDTO transferRequestFiduciaryDTO)
         {
             try

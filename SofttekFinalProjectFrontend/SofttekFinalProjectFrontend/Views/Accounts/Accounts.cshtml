@@ -3,11 +3,43 @@
 <h3>Accounts Fiduciary</h3>
 <table id="tableFiduciary" class="table table-striped" style="width:100%"></table>
 
-<div style="height: 20px;"></div>
 
-<div style="margin-bottom: 10%;">
-    <h3>Accounts Crypto</h3>
-    <table id="tableCrypto" class="table table-striped" style="width:100%"></table>
+<h3>Accounts Crypto</h3>
+<table id="tableCrypto" class="table table-striped" style="width:100%"></table>
+
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Account</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">CBU: </label>
+                        <span id="cbu" class="col-md-8"></span>
+                    </div>
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">Alias: </label>
+                        <span id="alias" class="col-md-8"></span>
+                    </div>
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">Account Number: </label>
+                        <span id="accountNumber" class="col-md-8"></span>
+                    </div>
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">Amount: </label>
+                        <span id="amount" class="col-md-8"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script src="~/js/Accounts/Accounts.js"> </script>

@@ -26,5 +26,13 @@ namespace SofttekFinalProjectBackend.Controllers
            return await _services.GetAllAccounts(id,parameter,pageSize, pageToShow, HttpContext.Request);
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAccount(string Cbu, int parameter = 0, int pageSize = 10, int pageToShow = 1)
+        {
+
+            return await _services.GetAccount(Cbu, parameter, pageSize, pageToShow, HttpContext.Request);
+
+        }
     }
 }
