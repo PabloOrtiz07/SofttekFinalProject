@@ -5,7 +5,7 @@ namespace SofttekFinalProjectBackend.Logic
 {
     public class AccountFinder
     {
-        public async Task<FiduciaryAccount> FindingAccountPesosAsync(IEnumerable<FiduciaryAccount> fiduciaryAccounts,string cbu)
+        public async Task<FiduciaryAccount> FindingAccountPesosAsync(IEnumerable<FiduciaryAccount> fiduciaryAccounts, string cbu)
         {
             return await Task.Run(() => fiduciaryAccounts.FirstOrDefault(fiduciaryAccount
                 => fiduciaryAccount.Cbu == cbu));

@@ -47,6 +47,7 @@ namespace Data.Base
             }
 
         }
+   
 
         public async Task<IActionResult> PutToApi(string controllerName, object model, string token = "")
         {
@@ -104,5 +105,38 @@ namespace Data.Base
                 return StatusCode(500, ex.Message); 
             }
         }
+
+        public async Task<IActionResult> GetToApi(string controllerName, string token = "")
+        {
+            try
+            {
+                var client = _httpClient.CreateClient("useApi");
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                }
+
+                var response = await client.GetAsync(controllerName);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return Ok(content);
+                }
+
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return NotFound();
+                }
+
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
     }
 }

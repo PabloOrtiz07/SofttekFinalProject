@@ -1,0 +1,50 @@
+﻿@model SofttekFinalProjectFrontend.ViewModels.DepositFiduciaryViewModel
+
+<div class="modal fade" id="depositsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Deposit.</h5>
+            </div>
+            @using (Html.BeginForm("SendDeposit", "Deposits", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <div class="row">
+                        @Html.HiddenFor(x => x.UserId, new { id = "userIdHidden" })
+
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label">CBU: </label>
+                            @Html.EditorFor(x => x.Cbu, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label">Alias</label>
+                            @Html.EditorFor(x => x.Alias, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label">Account Number</label>
+                            @Html.EditorFor(x => x.AccountNumber, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label">Amount</label>
+                            @Html.EditorFor(x => x.Amount, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label">Type Of Deposit</label>
+                            @Html.EditorFor(x => x.TypeOfDeposit, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                        </div>                    
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label">Name Of Crypto (Optional)</label>
+                            @Html.EditorFor(x => x.NameOfCrypto, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" id="btnGuardar">Send</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/js/Deposits/Deposits.js"> </script>

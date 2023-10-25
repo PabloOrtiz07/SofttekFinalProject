@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\js\\Accounts\\Accounts.js"
     },
     {
+      "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Deposits\\Deposits.js",
+      "PackagePath": "staticwebassets\\js\\Deposits\\Deposits.js"
+    },
+    {
       "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Home\\Home.js",
       "PackagePath": "staticwebassets\\js\\Home\\Home.js"
     },
@@ -51,6 +55,10 @@
     {
       "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Utils\\Utils.js",
       "PackagePath": "staticwebassets\\js\\Utils\\Utils.js"
+    },
+    {
+      "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\WithDraws\\WithDraws.js",
+      "PackagePath": "staticwebassets\\js\\WithDraws\\WithDraws.js"
     },
     {
       "Id": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\site.js",

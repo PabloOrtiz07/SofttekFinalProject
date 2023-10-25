@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zGVthgKaWOg8dSLTCuUb6fWxDEIxqezBRU5I8yJLflg=",
+  "Hash": "zKR2627AwGYeUNc5GIYqPIRBt925RT3eZsAP55hqWIQ=",
   "Source": "SofttekFinalProjectFrontend",
   "BasePath": "_content/SofttekFinalProjectFrontend",
   "Mode": "Default",
@@ -204,6 +204,23 @@
       "OriginalItemSpec": "wwwroot\\js\\Accounts\\Accounts.js"
     },
     {
+      "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Deposits\\Deposits.js",
+      "SourceId": "SofttekFinalProjectFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\",
+      "BasePath": "_content/SofttekFinalProjectFrontend",
+      "RelativePath": "js/Deposits/Deposits.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Deposits\\Deposits.js"
+    },
+    {
       "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\Home\\Home.js",
       "SourceId": "SofttekFinalProjectFrontend",
       "SourceType": "Discovered",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Utils\\Utils.js"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\js\\WithDraws\\WithDraws.js",
+      "SourceId": "SofttekFinalProjectFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\",
+      "BasePath": "_content/SofttekFinalProjectFrontend",
+      "RelativePath": "js/WithDraws/WithDraws.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\WithDraws\\WithDraws.js"
     },
     {
       "Identity": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
