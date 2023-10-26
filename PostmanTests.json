@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "5f58b575-8f10-4302-86ac-1fea66d79ce8",
+		"name": "FinalProjectSofttek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29301178"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7172/api/Users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WithDrawPesos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"withDrawMoneyFiduciary\": {\r\n    \"cbu\": \"CBU1\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\",\r\n    \"amount\": 500,\r\n    \"typeOfWithDraw\": 0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/withdrawmoney/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"withdrawmoney",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WithDrawDollar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"withDrawMoneyFiduciary\": {\r\n    \"cbu\": \"CBU2\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\",\r\n    \"amount\": 500,\r\n    \"typeOfWithDraw\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/withdrawmoney/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"withdrawmoney",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WithDrawCrypto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"withDrawMoneyCrypto\": {\r\n    \"uuid\": \"CryptoUUID1\",\r\n    \"amount\": 100,\r\n    \"nameOfCrypto\": \"bitcoin\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sale",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 0,\r\n  \"nameOfCrypto\": \"string\",\r\n  \"cbuAccountPesos\": \"CBU1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/sale/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"sale",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/buy/1?saleNumber=5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"buy",
+								"1"
+							],
+							"query": [
+								{
+									"key": "saleNumber",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositPesostoPesos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositFiduciary\": {\r\n    \"amount\": 500000,\r\n    \"typeOfDeposit\": 0,\r\n    \"cbu\": \"CBU1\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositPesostoDollar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositFiduciary\": {\r\n    \"amount\": 120000,\r\n    \"typeOfDeposit\": 0,\r\n    \"cbu\": \"CBU2\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositDollartoDollar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositFiduciary\": {\r\n    \"amount\": 500,\r\n    \"typeOfDeposit\": 1,\r\n    \"cbu\": \"CBU2\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositDollartoPesos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositFiduciary\": {\r\n    \"amount\": 1000,\r\n    \"typeOfDeposit\": 1,\r\n    \"cbu\": \"CBU1\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositCryptotoDollar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositFiduciary\": {\r\n    \"amount\": 1,\r\n    \"typeOfDeposit\": 2,\r\n    \"nameOfCrypto\": \"bitcoin\",\r\n    \"cbu\": \"CBU2\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositCryptotoPesos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositFiduciary\": {\r\n    \"amount\": 100,\r\n    \"typeOfDeposit\": 2,\r\n    \"nameOfCrypto\": \"ethereum\",\r\n    \"cbu\": \"CBU1\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositPesostoCrypto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositCrypto\": {\r\n    \"amount\": 50000000,\r\n    \"typeOfDeposit\": 0,\r\n    \"uuid\": \"CryptoUUID1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositDollartoCrypto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositCrypto\": {\r\n    \"amount\": 50000,\r\n    \"typeOfDeposit\": 1,\r\n    \"uuid\": \"CryptoUUID1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DepositCryptotoCrypto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depositCrypto\": {\r\n    \"amount\": 1,\r\n    \"typeOfDeposit\": 2,\r\n    \"nameOfCrypto\": \"ethereum\",\r\n    \"uuid\": \"CryptoUUID1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/deposit/1?parameter=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"deposit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransfersFiduciarytoFiduciary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transfersFiduciaryOrigin\": {\r\n    \"amount\": 12000000,\r\n    \"typeOfDeposit\": 0,\r\n    \"cbu\": \"CBU1\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  },\r\n  \"transfersFiduciaryDestination\": {\r\n    \"cbu\": \"CBU2\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/transfers/1?parameter=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"transfers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransfersFiduciarytoCrypto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transfersFiduciaryOrigin\": {\r\n    \"amount\": 1200000,\r\n    \"typeOfDeposit\": 0,\r\n    \"cbu\": \"CBU1\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  },\r\n  \"transfersCryptoDestination\": {\r\n    \"uuid\": \"CryptoUUID1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/transfers/1?parameter=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"transfers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransfersCryptotoFiduciary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transfersCryptoOrigin\": {\r\n    \"amount\": 1,\r\n    \"typeOfDeposit\": 2,\r\n    \"nameOfCrypto\": \"bitcoin\",\r\n    \"uuid\": \"CryptoUUID1\"\r\n  },\r\n  \"transfersFiduciaryDestination\": {\r\n    \"cbu\": \"CBU2\",\r\n    \"alias\": \"string\",\r\n    \"accountNumber\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/transfers/1?parameter=2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"transfers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransfersCryptotoCrypto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transfersCryptoOrigin\": {\r\n    \"amount\": 1,\r\n    \"typeOfDeposit\": 2,\r\n    \"nameOfCrypto\": \"bitcoin\",\r\n    \"uuid\": \"CryptoUUID1\"\r\n  },\r\n  \"transfersCryptoDestination\": {\r\n    \"uuid\": \"CryptoUUID2\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7172/api/Users/transfers/1?parameter=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7172",
+							"path": [
+								"api",
+								"Users",
+								"transfers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
