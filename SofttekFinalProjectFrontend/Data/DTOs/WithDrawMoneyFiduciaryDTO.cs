@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace Data.DTOs
 {
-    public class WithDrawFiduciaryDTO
+    public class WithDrawMoneyFiduciaryDTO
     {
-        public string Cbu { get; set; }
-        public string Alias { get; set; }
-        public string AccountNumber { get; set; }
-        public double Amount { get; set; }
-        public int TypeOfWithDraw { get; set; }
-        public string MameOfCrypto { get; set; }
-
-        public int UserId { get; set; }
+        public string cbu { get; set; }
+        public string alias { get; set; }
+        public string accountNumber { get; set; }
+        public double amount { get; set; }
+        public int typeOfWithDraw { get; set; }
     }
 
 }

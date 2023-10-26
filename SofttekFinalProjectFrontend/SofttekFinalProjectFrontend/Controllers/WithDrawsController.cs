@@ -22,49 +22,70 @@ namespace SofttekFinalProjectFrontend.Controllers
         {
             return View();
         }
-
-        public async Task<IActionResult> WithDrawsAddPartial(WithDrawFiduciaryDTO withDrawFiduciary)
+        public async Task<IActionResult> WithDrawsFiduciaryPartial(WithDrawDTO withDrawFiduciary)
         {
-            var withDrawFiduciarysViewModel = new WithDrawFiduciaryViewModel();
+            var withDrawFiduciarysViewModel = new WithDrawViewModel();
 
             if (withDrawFiduciary != null)
             {
                 withDrawFiduciarysViewModel = withDrawFiduciary;
             }
 
-            return PartialView("~/Views/WithDraws/Partial/WithDrawsFiduciaryAddPartial.cshtml", withDrawFiduciarysViewModel);
+            return PartialView("~/Views/WithDraws/Partial/WithDrawsFiduciaryPartial.cshtml", withDrawFiduciarysViewModel);
         }
 
-        public IActionResult SendWithDraw(WithDrawFiduciaryDTO withDrawFiduciaryDTO)
+        public async Task<IActionResult> WithDrawsCryptoPartial(WithDrawDTO withDrawFiduciary)
+        {
+            var withDrawFiduciarysViewModel = new WithDrawViewModel();
+
+            if (withDrawFiduciary != null)
+            {
+                withDrawFiduciarysViewModel = withDrawFiduciary;
+            }
+
+            return PartialView("~/Views/WithDraws/Partial/WithDrawsCryptoPartial.cshtml", withDrawFiduciarysViewModel);
+        }
+
+        public IActionResult SendWithDrawFiduciary(WithDrawDTO withDrawDTO)
         {
 
-            WithdrawMoneyFiduciaryModel model = new WithdrawMoneyFiduciaryModel
+            WithdrawMoneyFiduciaryModel modelFiduciary = new WithdrawMoneyFiduciaryModel
             {
-                cbu = withDrawFiduciaryDTO.Cbu,
-                alias = withDrawFiduciaryDTO.Alias,
-                accountNumber = withDrawFiduciaryDTO.AccountNumber,
-                amount = withDrawFiduciaryDTO.Amount,
-                typeOfWithDraw = withDrawFiduciaryDTO.TypeOfWithDraw
+                cbu = withDrawDTO.WithDrawMoneyFiduciary.cbu,
+                alias = withDrawDTO.WithDrawMoneyFiduciary.alias,
+                accountNumber = withDrawDTO.WithDrawMoneyFiduciary.accountNumber,
+                amount = withDrawDTO.WithDrawMoneyFiduciary.amount,
+                typeOfWithDraw = withDrawDTO.WithDrawMoneyFiduciary.typeOfWithDraw
             };
-            WithdrawMoneyCryptoModel modelDos = new WithdrawMoneyCryptoModel
-            {
-                uuid = "string",
-                amount = 0,
-                nameOfCrypto = "string",
-            };
+
             WithDrawMoneyModel withDrawMoneyModel = new WithDrawMoneyModel();
 
-            withDrawMoneyModel.WithdrawMoneyFiduciary = model;
-            withDrawMoneyModel.WithdrawMoneyCrypto = modelDos;
-
-
-
-
+            withDrawMoneyModel.WithdrawMoneyFiduciary = modelFiduciary;
 
             var token = HttpContext.Session.GetString("Token");
             var baseApi = new BaseApi(_httpClient);
-            var id = withDrawFiduciaryDTO.UserId;
-            var apiUrl = $"Users/withdrawmoney/1?parameter=0";
+            var id = withDrawDTO.UserId;
+            var apiUrl = $"Users/withdrawmoney/{id}?parameter=0";
+            var users = baseApi.PutToApi(apiUrl, withDrawMoneyModel, token);
+            return RedirectToAction("WithDraws", "WithDraws", new { area = "" });
+        }
+        public IActionResult SendWithDrawCrypto(WithDrawDTO withDrawDTO)
+        {
+
+            WithdrawMoneyCryptoModel modelCrypto = new WithdrawMoneyCryptoModel
+            {
+                uuid = withDrawDTO.WithDrawMoneyCrypto.uuid,
+                amount = withDrawDTO.WithDrawMoneyCrypto.amount,
+                nameOfCrypto = withDrawDTO.WithDrawMoneyCrypto.nameOfCrypto,
+            };
+            WithDrawMoneyModel withDrawMoneyModel = new WithDrawMoneyModel();
+
+            withDrawMoneyModel.WithdrawMoneyCrypto = modelCrypto;
+
+            var token = HttpContext.Session.GetString("Token");
+            var baseApi = new BaseApi(_httpClient);
+            var id = withDrawDTO.UserId;
+            var apiUrl = $"Users/withdrawmoney/{id}?parameter=1";
             var users = baseApi.PutToApi(apiUrl, withDrawMoneyModel, token);
             return RedirectToAction("WithDraws", "WithDraws", new { area = "" });
         }

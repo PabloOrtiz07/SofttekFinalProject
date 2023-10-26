@@ -1,3 +1,11 @@
-﻿localStorage.setItem('Token', '@Model.Token');
-localStorage.setItem('Id', '@Model.Id');
+﻿$(function () {
+    if ($("#Token").val() != "") {
+        setCookie("Token", $("#Token").val())
+    }
+})
 
+$(function () {
+    if ($("#Id").val() != "") {
+        setCookie("Id", $("#Id").val())
+    }
+})

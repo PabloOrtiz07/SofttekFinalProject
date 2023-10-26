@@ -7,7 +7,7 @@
 <h3>Accounts Crypto</h3>
 <table id="tableCrypto" class="table table-striped" style="width:100%"></table>
 
-<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="userModalFiduciary" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -30,6 +30,42 @@
                     <div class="col-md-6 mt-1 mb-3">
                         <label class="col-md-4 form-control-label font-weight-bold">Amount: </label>
                         <span id="amount" class="col-md-8"></span>
+                    </div>     
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">type Of Account: </label>
+                        <span id="typeOfAccount" class="col-md-8"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="userModalCrypto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Account</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">UUID: </label>
+                        <span id="uuid" class="col-md-8"></span>
+                    </div>
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">Description: </label>
+                        <span id="nameOfCrypto" class="col-md-8"></span>
+                    </div>
+                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">Amount: </label>
+                        <span id="amountCrypto" class="col-md-8"></span>
+                    </div>                    <div class="col-md-6 mt-1 mb-3">
+                        <label class="col-md-4 form-control-label font-weight-bold">Type of Account: </label>
+                        <span id="typeOfAccountCrypto" class="col-md-8"></span>
                     </div>
                 </div>
 
@@ -41,5 +77,5 @@
     </div>
 </div>
 
-
 <script src="~/js/Accounts/Accounts.js"> </script>
+

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj": {}
+    "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj": {
+    "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\obj\\",
+        "outputPath": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",

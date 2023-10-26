@@ -8,13 +8,12 @@ namespace Data.DTOs
 {
     public class DepositFiduciaryDTO
     {
-        public double Amount { get; set; }
-        public int TypeOfDeposit { get; set; }
-        public string Cbu { get; set; }
-        public string Alias { get; set; }
-        public string AccountNumber { get; set; }
-        public int UserId { get; set; }
-        public string NameOfCrypto { get; set; }
+        public string cbu { get; set; }
+        public string alias { get; set; }
+        public string accountNumber { get; set; }
+        public double amount { get; set; }
+        public int typeOfDeposit { get; set; }
+        public string nameOfCrypto { get; set; }
 
 
 

@@ -1,8 +1,7 @@
 ﻿var token = getCookie("Token");
-var id = localStorage.getItem('Id');
-console.log(id);
+var id = getCookie("Id");
 
- function SendDepositFiduciary() {
+ function SendDepositFiduciaryToFiduciary() {
 
         var postData = {
             UserId: id
@@ -10,23 +9,89 @@ console.log(id);
 
         $.ajax({
             type: "POST",
-            url: "/Transfers/TransfersAddPartial",
+            url: "/Transfers/TransfersFiduciaryToFiduciaryPartial",
             data: JSON.stringify(postData),
             contentType: 'application/json',
             dataType: "html",
             success: function (result) {
-                $('#transfersAddPartial').html(result);
-                $('#transfersModal').modal('show');
+                $('#transfersFiduciaryToFiduciaryPartial').html(result);
+                $('#transfersFiduciaryToFiduciaryModal').modal('show');
             }
         });
 }
 
-$("#transfersFiduciaryButton").click(function () {
-    SendDepositFiduciary();
+$("#transfersFiduciaryToFiduciaryButton").click(function () {
+    SendDepositFiduciaryToFiduciary();
+
+
+}); function SendDepositFiduciaryToCrypto() {
+
+    var postData = {
+        UserId: id
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Transfers/TransfersFiduciaryToCryptoPartial",
+        data: JSON.stringify(postData),
+        contentType: 'application/json',
+        dataType: "html",
+        success: function (result) {
+            $('#transfersFiduciaryToCryptoPartial').html(result);
+            $('#transfersFiduciaryToCryptoModal').modal('show');
+        }
+    });
+}
+
+$("#transfersFiduciaryToCryptoButton").click(function () {
+    SendDepositFiduciaryToCrypto();
+
+
+}); function SendDepositCryptoToFiduciary() {
+
+    var postData = {
+        UserId: id
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Transfers/TransfersCryptoToFiduciaryPartial",
+        data: JSON.stringify(postData),
+        contentType: 'application/json',
+        dataType: "html",
+        success: function (result) {
+            $('#transfersCryptoToFiduciaryPartial').html(result);
+            $('#transfersCryptoToFiduciaryModal').modal('show');
+        }
+    });
+}
+
+$("#transfersCryptoToFiduciaryButton").click(function () {
+    SendDepositCryptoToFiduciary();
+}); function SendDepositCryptoToCrypto() {
+
+    var postData = {
+        UserId: id
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Transfers/TransfersCryptoToCryptoPartial",
+        data: JSON.stringify(postData),
+        contentType: 'application/json',
+        dataType: "html",
+        success: function (result) {
+            $('#transfersCryptoToCryptoPartial').html(result);
+            $('#transfersCryptoToCryptoModal').modal('show');
+        }
+    });
+}
+
+$("#transfersCryptoToCryptoButton").click(function () {
+    SendDepositCryptoToCrypto();
 });
 
 $(document).ready(function () {
-    var id = localStorage.getItem('Id');
     $('#userIdHidden').val(id); // Set the value of the hidden input field
 });
 

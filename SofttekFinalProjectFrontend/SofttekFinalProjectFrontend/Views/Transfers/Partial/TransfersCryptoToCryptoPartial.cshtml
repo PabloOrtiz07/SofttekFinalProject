@@ -1,0 +1,51 @@
+﻿@model SofttekFinalProjectFrontend.ViewModels.TransfersViewModel
+
+<div class="modal fade" id="transfersCryptoToCryptoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Transfers.</h5>
+            </div>
+            @using (Html.BeginForm("SendTransfersCryptoToCrypto", "Transfers", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <div class="row">
+                        @Html.HiddenFor(x => x.UserId, new { id = "userIdHidden" })
+
+                        <div class="col-md-6">
+                            <div class="mt-1 mb-3">
+                                <label class="form-control-label">UUID Origin: </label>
+                                @Html.EditorFor(x => x.TransfersCryptoOrigin.Uuid, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="mt-1 mb-3">
+                                <label class="form-control-label">Name of Crypto Origin</label>
+                                @Html.EditorFor(x => x.TransfersCryptoOrigin.NameOfCrypto, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="mt-1 mb-3">
+                                <label class="form-control-label">Amount Origin</label>
+                                @Html.EditorFor(x => x.TransfersCryptoOrigin.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="mt-1 mb-3">
+                                <label class="form-control-label">Type Of Transfers Origin</label>
+                                @Html.EditorFor(x => x.TransfersCryptoOrigin.TypeOfDeposit, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mt-1 mb-3">
+                                <label class="form-control-label">UUID Destination: </label>
+                                @Html.EditorFor(x => x.TransfersCryptoDestination.Uuid, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" id="btnGuardar">Send</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/js/Transfers/Transfers.js"> </script>

@@ -35,5 +35,26 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
                 return null;
             }
         }
+        public virtual async Task<List<Transaction>> GetAllUserTransaction(int id)
+        {
+            try
+            {
+                var transactions = await base.GetAll();
+
+                transactions = await _contextDB.Transactions
+                        .Include(transaction => transaction.fiduciaryAccountDestination)
+                        .Include(transaction => transaction.fiduciaryAccountOrigin)
+                        .Include(transaction => transaction.cryptoAccountDestination)
+                        .Include(transaction => transaction.cryptoAccountOrigin)
+                        .Where(transaction => transaction.IsDeleted != true && transaction.UserId == id)
+                        .ToListAsync();
+
+                return transactions;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
