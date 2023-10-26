@@ -1,0 +1,61 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transactions Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Add your existing CSS and other imports here -->
+
+    <style>
+        .transactions-section {
+            background-image: url('/images/test.jpg'); /* Update the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional for a fixed background */
+        }
+    </style>
+</head>
+<body class="transactions-section">
+    <h1>Transactions</h1>
+
+    <table id="tableFiduciary" class="table table-striped" style="width:100%"></table>
+
+    <h3>Transactions</h3>
+    <table id="tableTransactions" class="table table-striped" style="width:100%"></table>
+
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Transaction</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <div class="row">
+                                <label class="col-md-4 form-control-label font-weight-bold">Description Operation:</label>
+                                <span id="descriptionOperation" class="col-md-8"></span>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 form-control-label font-weight-bold">Amount:</label>
+                                <span id="amount" class="col-md-8"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label font-weight-bold">Created TimeUTC:</label>
+                            <span id="createdTimeUtc" class="col-md-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/Transactions/Transaction.js"> </script>
+</body>
+</html>
