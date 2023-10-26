@@ -1,12 +1,14 @@
 ﻿var token = getCookie("Token");
 var id = getCookie("Id");
-
+console.log(token)
 function initializeDataTable(url, tableId, columns) {
     return new DataTable(tableId, {
         ajax: {
             url: url,
             dataSrc: "data.items",
-            headers: { "Authorization": "Bearer " + token }
+            headers: {
+                "Authorization": "Bearer " + token
+            }
         },
         columns: columns
     });
@@ -28,10 +30,7 @@ const fiduciaryColumns = [
             return buttons;
         }
     }
-
 ];
-
-
 
 const cryptoColumns = [
     { data: 'uuid', title: 'UUID' },
@@ -58,6 +57,9 @@ function CheckTheBalanceFiduciary(cbu) {
         type: "GET",
         url: "https://localhost:7172/api/Accounts?name=" + cbu + "&parameter=0",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + token
+        },
         success: function (data) {
             console.log("Received data:", data);
 
@@ -83,11 +85,15 @@ function CheckTheBalanceFiduciary(cbu) {
         }
     });
 }
+
 function CheckTheBalanceCrypto(uuid) {
     $.ajax({
         type: "GET",
         url: "https://localhost:7172/api/Accounts?name=" + uuid + "&parameter=1",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + token
+        },
         success: function (data) {
             console.log("Received data:", data);
 

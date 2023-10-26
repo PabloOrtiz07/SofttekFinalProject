@@ -16,3 +16,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+#carouselExampleControls {
+    max-width: 50%;
+    max-height: 50%;
+}

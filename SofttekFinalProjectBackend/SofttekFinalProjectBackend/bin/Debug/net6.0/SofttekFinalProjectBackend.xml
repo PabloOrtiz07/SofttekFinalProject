@@ -4,5 +4,122 @@
         <name>SofttekFinalProjectBackend</name>
     </assembly>
     <members>
+        <member name="M:SofttekFinalProjectBackend.Controllers.AccountsController.GetAllAccounts(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves all accounts associated with a user.
+            </summary>
+            <param name="id">The unique identifier of the user.</param>
+            <param name="parameter">An optional parameter to specify the type of account (e.g., Fiduciary, Crypto).</param>
+            <param name="pageSize">An optional parameter to specify the page size for paginated results.</param>
+            <param name="pageToShow">An optional parameter to specify the page number for paginated results.</param>
+            <returns>A response containing the list of user accounts.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.AccountsController.GetAccountFiduciary(System.String,System.Int32)">
+            <summary>
+            Retrieves a specific account by name.
+            </summary>
+            <param name="name">The name or identifier of the account.</param>
+            <param name="parameter">An optional parameter to specify the type of account (e.g., Fiduciary, Crypto).</param>
+            <returns>A response containing the details of the account.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.AuthorizeController.Login(SofttekFinalProjectBackend.DTOs.AuthenticateDTO)">
+            <summary>
+            Authenticates a user by attempting to log in.
+            </summary>
+            <param name="authenticateDTO">Data transfer object containing user authentication details.</param>
+            <returns>A response indicating the authentication result, including an access token if successful.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.SalesController.GetAll(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves all sales with optional pagination and filtering.
+            </summary>
+            <param name="parameter">An optional parameter for filtering sales.</param>
+            <param name="pageSize">An optional page size for pagination (default: 10).</param>
+            <param name="pageToShow">An optional page number for pagination (default: 1).</param>
+            <returns>A list of sales based on the provided filters and pagination parameters.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.SalesController.GetSale(System.Int32)">
+            <summary>
+            Retrieves a specific sale by its unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the sale.</param>
+            <returns>The sale information if found, or a 404 Not Found response if the sale does not exist.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.TransactionsController.GetTransaction(System.Int32)">
+            <summary>
+            Retrieves all transactions for a specific user by their unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the user.</param>
+            <returns>A list of transactions associated with the user if found, or a 404 Not Found response if the user does not exist.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.TransactionsController.GetAll(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves all user transactions with optional pagination and filtering.
+            </summary>
+            <param name="parameter">An optional parameter for filtering transactions.</param>
+            <param name="pageSize">An optional page size for pagination (default: 10).</param>
+            <param name="pageToShow">An optional page number for pagination (default: 1).</param>
+            <returns>A list of user transactions based on the provided filters and pagination parameters.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.TransactionsController.GetAllUserTransaction(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves all transactions for a specific user with optional pagination and filtering.
+            </summary>
+            <param name="id">The unique identifier of the user.</param>
+            <param name="parameter">An optional parameter for filtering transactions.</param>
+            <param name="pageSize">An optional page size for pagination (default: 10).</param>
+            <param name="pageToShow">An optional page number for pagination (default: 1).</param>
+            <returns>A list of transactions associated with the user based on the provided filters and pagination parameters.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.GetById(System.Int32)">
+            <summary>
+            Retrieves a user by their unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the user.</param>
+            <returns>The user's information if found or a 404 Not Found response if the user does not exist.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.WithdrawMoney(System.Int32,SofttekFinalProjectBackend.DTOs.WithDrawMoneyDTO,System.Int32)">
+            <summary>
+            Allows a user to initiate a withdrawal of funds from their account.
+            </summary>
+            <param name="id">The unique identifier of the user initiating the withdrawal.</param>
+            <param name="withDrawMoneyDTO">Data transfer object containing withdrawal details.</param>
+            <param name="parameter">A parameter to specify the withdrawal type (e.g., Fiduciary, Crypto).</param>
+            <returns>A response indicating the result of the withdrawal operation.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.Transfers(System.Int32,SofttekFinalProjectBackend.DTOs.TransferRequestDTO,System.Int32)">
+            <summary>
+            Allows a user to initiate a transfer of funds to another account.
+            </summary>
+            <param name="id">The unique identifier of the user initiating the transfer.</param>
+            <param name="transferRequestFiduciaryDTO">Data transfer object containing transfer details.</param>
+            <param name="parameter">A parameter to specify the transfer type (e.g., Fiduciary, Crypto).</param>
+            <returns>A response indicating the result of the transfer operation.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.Deposit(System.Int32,SofttekFinalProjectBackend.DTOs.DepositRequestDTO,System.Int32)">
+            <summary>
+            Allows a user to make a deposit into their account.
+            </summary>
+            <param name="id">The unique identifier of the user making the deposit.</param>
+            <param name="depositRequest">Data transfer object containing deposit details.</param>
+            <param name="parameter">A parameter to specify the deposit type (e.g., Fiduciary, Crypto).</param>
+            <returns>A response indicating the result of the deposit operation.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.Sale(System.Int32,SofttekFinalProjectBackend.DTOs.SaleRequestDTO)">
+            <summary>
+            Allows a user to initiate a sale transaction.
+            </summary>
+            <param name="id">The unique identifier of the user initiating the sale.</param>
+            <param name="saleRequest">Data transfer object containing sale details.</param>
+            <returns>A response indicating the result of the sale operation.</returns>
+        </member>
+        <member name="M:SofttekFinalProjectBackend.Controllers.UsersController.Buy(System.Int32,System.Int32)">
+            <summary>
+            Allows a user to initiate a purchase of a sale.
+            </summary>
+            <param name="id">The unique identifier of the user initiating the purchase.</param>
+            <param name="saleNumber">The sale number associated with the purchase.</param>
+            <returns>A response indicating the result of the purchase operation.</returns>
+        </member>
     </members>
 </doc>

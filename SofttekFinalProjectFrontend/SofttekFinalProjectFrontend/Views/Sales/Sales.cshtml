@@ -1,0 +1,62 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sales Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Add your existing CSS and other imports here -->
+
+    <style>
+        .sales-section {
+            background-image: url('/images/test.jpg'); /* Update the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional for a fixed background */
+        }
+    </style>
+</head>
+<body class="sales-section">
+    <h1>Sales</h1>
+
+    <table id="tableSale" class="table table-striped" style="width:100%"></table>
+
+    <div class="modal fade" id="saleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Sale</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label font-weight-bold">Sale Number: </label>
+                            <span id="saleNumber" class="col-md-8"></span>
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label font-weight-bold">Amount: </label>
+                            <span id="amountSale" class="col-md-8"></span>
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-4 form-control-label font-weight-bold">Description: </label>
+                            <span id="nameOfCryptoSale" class="col-md-8"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+        <button type="button" class="btn btn-success btn-lg custom-large-button" id="sendSaleButton"> Sale </button>
+    </div>
+
+    <div id="salePartial"></div>
+
+    <script src="~/js/Sales/Sales.js"> </script>
+</body>
+</html>

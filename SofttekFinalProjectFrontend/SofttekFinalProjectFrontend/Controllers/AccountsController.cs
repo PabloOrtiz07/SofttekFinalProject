@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SofttekFinalProjectFrontend.ViewModels;
 
-namespace SofttekFinalProjectFrontend.Controllers { 
-
+namespace SofttekFinalProjectFrontend.Controllers {
+    [Authorize]
     public class AccountsController : Controller
     {
         private readonly IHttpClientFactory _httpClient;

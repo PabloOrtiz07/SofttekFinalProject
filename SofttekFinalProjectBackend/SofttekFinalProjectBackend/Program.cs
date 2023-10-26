@@ -20,7 +20,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: AllowSpecificOrigins, policy =>
     {
         policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-    });
+    }); 
+ 
 });
 
 builder.Services.AddControllers();
@@ -70,6 +71,7 @@ builder.Services.AddAuthorization(option =>
     option.AddPolicy("User", policy => policy.RequireClaim(ClaimTypes.Role, "2"));
 
 });
+
 
 
 

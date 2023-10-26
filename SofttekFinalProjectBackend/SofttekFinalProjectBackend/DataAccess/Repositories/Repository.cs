@@ -52,6 +52,7 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories
             {
 
                 _contextDB.Set<T>().Add(entity);
+                _contextDB.SaveChanges();
                 return true;
 
 

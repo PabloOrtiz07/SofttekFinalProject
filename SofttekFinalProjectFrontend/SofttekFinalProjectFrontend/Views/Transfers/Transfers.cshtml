@@ -1,19 +1,37 @@
-﻿<h1>Transfers</h1>
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transfers Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Add your existing CSS and other imports here -->
 
+    <style>
+        .transfers-section {
+            background-image: url('/images/foto.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional for a fixed background */
+        }
+    </style>
+</head>
+<body class="transfers-section">
+    <h1>Transfers</h1>
 
-<div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20%">
-    <button id="transfersFiduciaryToFiduciaryButton" class="btn btn-primary" type="button">Transfers Fiduciary to Fiduciary</button>
-    <button id ="transfersFiduciaryToCryptoButton" class="btn btn-primary" type="button">Transfers Fiduciary to Crypto</button>
-    <button id="transfersCryptoToFiduciaryButton" class="btn btn-primary" type="button">Transfers Crypto to Fiduciary</button>
-    <button id="transfersCryptoToCryptoButton"  class="btn btn-primary" type="button">Transfers Crypto to Crypto</button>
-</div>
+    <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20%">
+        <button id="transfersFiduciaryToFiduciaryButton" class="btn btn-primary" type="button">Transfers Fiduciary to Fiduciary</button>
+        <button id="transfersFiduciaryToCryptoButton" class="btn btn-primary" type="button">Transfers Fiduciary to Crypto</button>
+        <button id="transfersCryptoToFiduciaryButton" class="btn btn-primary" type="button">Transfers Crypto to Fiduciary</button>
+        <button id="transfersCryptoToCryptoButton" class="btn btn-primary" type="button">Transfers Crypto to Crypto</button>
+    </div>
 
-<div id="transfersFiduciaryToFiduciaryPartial"></div>
-<div id="transfersFiduciaryToCryptoPartial"></div>
-<div id="transfersCryptoToCryptoPartial"></div>
-<div id="transfersCryptoToFiduciaryPartial"></div>
+    <div id="transfersFiduciaryToFiduciaryPartial"></div>
+    <div id="transfersFiduciaryToCryptoPartial"></div>
+    <div id="transfersCryptoToCryptoPartial"></div>
+    <div id="transfersCryptoToFiduciaryPartial"></div>
 
-
-
-<script src="~/js/Transfers/Transfers.js"> </script>
+    <script src="~/js/Transfers/Transfers.js"> </script>
+</body>
+</html>

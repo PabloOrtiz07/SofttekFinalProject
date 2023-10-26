@@ -9,6 +9,8 @@ using static Data.Base.BaseApi;
 
 namespace SofttekFinalProjectFrontend.Controllers
 {
+    [Authorize]
+
     public class TransfersController : Controller
     {
         private readonly IHttpClientFactory _httpClient;

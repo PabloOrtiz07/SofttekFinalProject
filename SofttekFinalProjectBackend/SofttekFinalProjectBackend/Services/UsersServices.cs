@@ -110,6 +110,11 @@ namespace SofttekFinalProjectBackend.Services
 
 
                 result = await _buyManager.Buy(user, sales ,saleNumber,allAccounts);
+                if (result == false)
+                {
+                    return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                }
                 result = await _saveTransactionManager.SaveTransactionBuy(user.Id, saleNumber);
 
 
@@ -144,7 +149,12 @@ namespace SofttekFinalProjectBackend.Services
                     return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
                 }
 
-                result = await _saleManager.Sale(user, saleRequest); 
+                result = await _saleManager.Sale(user, saleRequest);
+                if (result == false)
+                {
+                    return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                }
                 result = await _saveTransactionManager.SaveTransactionSale(user.Id, saleRequest);
 
 
@@ -182,6 +192,11 @@ namespace SofttekFinalProjectBackend.Services
                 {
 
                     result = await _withDrawManager.WithDraw(user, withDrawMoneyDTO.WithDrawMoneyFiduciary);
+                    if (result == false)
+                    {
+                        return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                    }
                     result = await _saveTransactionManager.SaveTransactionWithDraw(user.Id, withDrawMoneyDTO.WithDrawMoneyFiduciary);
 
                 }
@@ -189,6 +204,11 @@ namespace SofttekFinalProjectBackend.Services
                 if (parameter == 1)
                 {
                     result = await _withDrawManager.WithDraw(user, withDrawMoneyDTO.WithDrawMoneyCrypto);
+                    if (result == false)
+                    {
+                        return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                    }
                     result = await _saveTransactionManager.SaveTransactionWithDraw(user.Id, withDrawMoneyDTO.WithDrawMoneyCrypto);
                 }
 
@@ -228,6 +248,11 @@ namespace SofttekFinalProjectBackend.Services
                 {
                     DepositFiduciary fiduciaryAccount = depositRequest.DepositFiduciary;
                     result = await _depositManager.Deposit(user, fiduciaryAccount);
+                    if (result == false)
+                    {
+                        return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                    }
                     result = await _saveTransactionManager.SaveTransactionDeposit(user.Id, depositRequest.DepositFiduciary);
                 }
 
@@ -235,6 +260,11 @@ namespace SofttekFinalProjectBackend.Services
                 {
                     DepositCrypto cryptoAccount = depositRequest.DepositCrypto;
                     result = await _depositManager.Deposit(user, cryptoAccount);
+                    if (result == false)
+                    {
+                        return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                    }
                     result = await _saveTransactionManager.SaveTransactionDeposit(user.Id, depositRequest.DepositCrypto);
                 }
 
@@ -275,18 +305,38 @@ namespace SofttekFinalProjectBackend.Services
                 {
                     case 0:
                         result = await _transfersManager.TransfersOriginToDestination(user, fiduciaryDepositOrigin, fiduciaryDepositDestination);
+                        if (result == false)
+                        {
+                            return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                        }
                         result = await _saveTransactionManager.SaveTransactionTransfers(user.Id, fiduciaryDepositOrigin, fiduciaryDepositDestination);
                         break;
                     case 1:
                         result = await _transfersManager.TransfersOriginToDestination(user, fiduciaryDepositOrigin, cryptoDepositDestination);
+                        if (result == false)
+                        {
+                            return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                        }
                         result = await _saveTransactionManager.SaveTransactionTransfers(user.Id, fiduciaryDepositOrigin, cryptoDepositDestination);
                         break;
                     case 2:
                         result = await _transfersManager.TransfersOriginToDestination(user, cryptoDepositOrigin, fiduciaryDepositDestination);
+                        if (result == false)
+                        {
+                            return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                        }
                         result = await _saveTransactionManager.SaveTransactionTransfers(user.Id, cryptoDepositOrigin, fiduciaryDepositDestination);
                         break;
                     case 3:
                         result = await _transfersManager.TransfersOriginToDestination(user, cryptoDepositOrigin, cryptoDepositDestination);
+                        if (result == false)
+                        {
+                            return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                        }
                         result = await _saveTransactionManager.SaveTransactionTransfers(user.Id, cryptoDepositOrigin, cryptoDepositDestination);
                         break;
                     default:
