@@ -18,7 +18,7 @@ namespace SofttekFinalProjectBackend.Logic
 
         public async Task<Sale> FindingMatchingSaleAvailableAsync(IEnumerable<Sale> sales, int saleNumber)
         {
-            return await Task.Run(() => sales.SingleOrDefault(sale => sale.Id == saleNumber));
+            return await Task.Run(() => sales.SingleOrDefault(sale => sale.Id == saleNumber && sale.IsDeleted != true));
         }
 
         public async Task<FiduciaryAccount> FindMatchingFiduciaryAccountAsync(IEnumerable<FiduciaryAccount> accounts, WithDrawMoneyFiduciary withDrawMoneyFiduciary)

@@ -1,14 +1,33 @@
-﻿<h1>Deposits</h1>
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Deposits Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Add your existing CSS and other imports here -->
 
+    <style>
+        .deposits-section {
+            background-image: url('/images/foto.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional for a fixed background */
+        }
+    </style>
+</head>
+<body class="deposits-section">
+    <h1>Deposits</h1>
 
-<div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20%">
-    <button id="depositsFiduciaryButton" class="btn btn-primary" type="button">Deposit Fiduciary</button>
-    <button id="depositsCryptoButton" class="btn btn-primary" type="button">Deposit Crypto</button>
-</div>
+    <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20%">
+        <button id="depositsFiduciaryButton" class="btn btn-primary" type="button">Deposit Fiduciary</button>
+        <button id="depositsCryptoButton" class="btn btn-primary" type="button">Deposit Crypto</button>
+    </div>
 
-<div id="depositsFiduciaryPartial"></div>
-<div id="depositsCryptoPartial"></div>
+    <div id="depositsFiduciaryPartial"></div>
+    <div id="depositsCryptoPartial"></div>
 
-
-<script src="~/js/Deposits/Deposits.js"> </script>
+    <script src="~/js/Deposits/Deposits.js"> </script>
+</body>
+</html>

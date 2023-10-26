@@ -4376,11 +4376,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend.csproj",
+      "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend.csproj",
       "projectName": "SofttekFinalProjectFrontend",
-      "projectPath": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend.csproj",
+      "projectPath": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend.csproj",
       "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\obj\\",
+      "outputPath": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\SofttekFinalProjectFrontend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4397,8 +4397,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj"
+            "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj"
             }
           }
         }

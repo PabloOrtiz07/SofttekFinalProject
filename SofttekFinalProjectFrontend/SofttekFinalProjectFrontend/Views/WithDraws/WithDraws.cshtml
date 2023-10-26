@@ -1,12 +1,32 @@
-﻿<h1>WithDraws</h1>
-<div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20%">
-    <button id="withDrawFiduciaryButton" class="btn btn-primary" type="button">WithDraw Fiduciary</button>
-    <button id="withDrawCryptoButton" class="btn btn-primary" type="button">WithDraw Crypto</button>
-</div>
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Withdraws Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div id="withDrawCryptoPartial"></div>
-<div id="withDrawFiduciaryPartial"></div>
 
+    <style>
+        .withdraws-section {
+            background-image: url('/images/foto.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+        }
+    </style>
+</head>
+<body class="withdraws-section">
+    <h1>Withdraws</h1>
 
-<script src="~/js/WithDraws/WithDraws.js"> </script>
+    <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20%">
+        <button id="withDrawFiduciaryButton" class="btn btn-primary" type="button">Withdraw Fiduciary</button>
+        <button id="withDrawCryptoButton" class ="btn btn-primary" type="button">Withdraw Crypto</button>
+    </div>
 
+    <div id="withDrawCryptoPartial"></div>
+    <div id="withDrawFiduciaryPartial"></div>
+
+    <script src="~/js/Withdraws/Withdraws.js"> </script>
+</body>
+</html>

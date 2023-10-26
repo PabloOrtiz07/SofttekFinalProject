@@ -26,7 +26,7 @@ namespace SofttekFinalProjectFrontend
             {
                 config.Events.OnRedirectToLogin = context =>
                 {
-                    context.Response.Redirect("https://localhost:7138/");
+                    context.Response.Redirect("https://localhost:7800/");
                     return Task.CompletedTask;
                 };
             });

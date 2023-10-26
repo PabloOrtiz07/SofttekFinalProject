@@ -20,6 +20,29 @@ namespace SofttekFinalProjectBackend.Services
             _mapper = mapper;
 
         }
+        public async Task<IActionResult> GetSale(int id)
+        {
+            try
+            {
+
+                Sale sale = await _unitOfWork.SaleRepository.GetById(id);
+
+                if (sale == null)
+                {
+                    return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+
+                }
+
+                SaleDTO salesDTO = _mapper.Map<SaleDTO>(sale);
+
+                return ResponseFactory.CreateSuccessResponse(200, salesDTO);
+
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateErrorResponse(500, "A surprise error happened");
+            }
+        }
 
         public async Task<IActionResult> GetAllSales(int parameter, int pageSize, int pageToShow, HttpRequest Request)
         {
