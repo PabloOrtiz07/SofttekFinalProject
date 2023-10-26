@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SofttekFinalProjectBackend.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class ProjectSofttek : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -274,8 +274,8 @@ namespace SofttekFinalProjectBackend.Migrations
                 columns: new[] { "transaction_id", "Amount", "transaction_createdTimeUtc", "transaction_deletedTimeUtc", "transaction_isDeleted", "transaction_typeofoperation", "transaction_user", "cryptoAccountDestinationId", "cryptoAccountOriginId", "descriptionOperation", "fiduciaryAccountDestinationId", "fiduciaryAccountOriginId" },
                 values: new object[,]
                 {
-                    { 1, 100.0, new DateTime(2023, 10, 25, 21, 3, 7, 718, DateTimeKind.Utc).AddTicks(8576), null, false, 0, 1, null, 1, "Sale", null, null },
-                    { 2, 50.0, new DateTime(2023, 10, 25, 21, 3, 7, 718, DateTimeKind.Utc).AddTicks(8584), null, false, 1, 2, null, null, "Buy", 2, 1 }
+                    { 1, 100.0, new DateTime(2023, 10, 26, 8, 24, 48, 19, DateTimeKind.Utc).AddTicks(9170), null, false, 0, 1, null, 1, "Sale", null, null },
+                    { 2, 50.0, new DateTime(2023, 10, 26, 8, 24, 48, 19, DateTimeKind.Utc).AddTicks(9175), null, false, 1, 2, null, null, "Buy", 2, 1 }
                 });
 
             migrationBuilder.CreateIndex(

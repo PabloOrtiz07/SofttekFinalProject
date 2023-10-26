@@ -33,6 +33,7 @@ namespace SofttekFinalProjectBackend.Controllers
             return await _services.GetAllAccounts(id, parameter, pageSize, pageToShow, HttpContext.Request);
         }
 
+
         /// <summary>
         /// Retrieves a specific account by name.
         /// </summary>
