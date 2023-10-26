@@ -28,11 +28,12 @@ namespace SofttekFinalProjectBackend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAccount(string Cbu, int parameter = 0, int pageSize = 10, int pageToShow = 1)
+        public async Task<IActionResult> GetAccountFiduciary(string name, int parameter = 0)
         {
 
-            return await _services.GetAccount(Cbu, parameter, pageSize, pageToShow, HttpContext.Request);
+            return await _services.GetAccount(name, parameter);
 
         }
+
     }
 }

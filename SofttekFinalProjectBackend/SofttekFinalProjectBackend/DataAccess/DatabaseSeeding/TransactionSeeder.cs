@@ -11,23 +11,26 @@ public class TransactionSeeder : IEntitySeeder
             {
                 Id = 1,
                 TypeOfOperation = TypeOfOperation.Sale,
-                descriptionOperation = "Sale of bitcoin",
+                descriptionOperation = "Sale",
                 UserId = 1,
                 IsDeleted = false,
                 DeletedTimeUtc = null,
                 cryptoAccountOriginId = 1,
-                Amount = 100.0
+                Amount = 100.0,
+                CreatedTimeUtc = DateTime.UtcNow
             },
             new Transaction
             {
                 Id = 2,
                 TypeOfOperation = TypeOfOperation.Buy,
-                descriptionOperation = "Purchase of ethereum",
+                descriptionOperation = "Buy",
                 UserId = 2,
                 IsDeleted = false,
                 DeletedTimeUtc = null,
-                cryptoAccountOriginId = 2,
-                Amount = 50.0 
+                fiduciaryAccountOriginId = 1,
+                fiduciaryAccountDestinationId = 2,
+                Amount = 50.0,
+                CreatedTimeUtc = DateTime.UtcNow
             }
         );
     }

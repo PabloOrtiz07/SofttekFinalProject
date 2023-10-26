@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6/P2wESYG3hWHxo/EHN9/vvPqT93imxOQeYwDLLlJJr4aI8g/s9vspYE+T6KUo1qCV+57dpHojWLpIq/bv6/zg==",
+  "dgSpecHash": "xBUZppeGHxPzpC8MBJ02YkghMrUMuyhAjKEy7s7xfD5a9GNuGWKC3PVoOWj1b7pw6glNs8eamgXQzqVB4wzEvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pablo\\Desktop\\SofttekFinalProject\\SofttekFinalProjectFrontend\\Data\\Data.csproj",
+  "projectFilePath": "C:\\Users\\Pablo\\Desktop\\NuevoFrontend\\SofttekFinalProjectFrontend\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pablo\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

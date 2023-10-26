@@ -396,21 +396,24 @@ namespace SofttekFinalProjectBackend.Migrations
                         {
                             Id = 1,
                             Amount = 100.0,
+                            CreatedTimeUtc = new DateTime(2023, 10, 25, 21, 3, 7, 718, DateTimeKind.Utc).AddTicks(8576),
                             IsDeleted = false,
                             TypeOfOperation = 0,
                             UserId = 1,
                             cryptoAccountOriginId = 1,
-                            descriptionOperation = "Sale of bitcoin"
+                            descriptionOperation = "Sale"
                         },
                         new
                         {
                             Id = 2,
                             Amount = 50.0,
+                            CreatedTimeUtc = new DateTime(2023, 10, 25, 21, 3, 7, 718, DateTimeKind.Utc).AddTicks(8584),
                             IsDeleted = false,
                             TypeOfOperation = 1,
                             UserId = 2,
-                            cryptoAccountOriginId = 2,
-                            descriptionOperation = "Purchase of ethereum"
+                            descriptionOperation = "Buy",
+                            fiduciaryAccountDestinationId = 2,
+                            fiduciaryAccountOriginId = 1
                         });
                 });
 

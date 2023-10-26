@@ -1,6 +1,5 @@
 ﻿var token = getCookie("Token");
-var id = localStorage.getItem('Id');
-console.log(id);
+var id = getCookie("Id");
 
  function SendDepositFiduciary() {
 
@@ -10,24 +9,48 @@ console.log(id);
 
         $.ajax({
             type: "POST",
-            url: "/Deposits/DepositsAddPartial",
+            url: "/Deposits/DepositsFiduciaryPartial",
             data: JSON.stringify(postData),
             contentType: 'application/json',
             dataType: "html",
             success: function (result) {
-                $('#depositsAddPartial').html(result);
-                $('#depositsModal').modal('show');
+                $('#depositsFiduciaryPartial').html(result);
+                $('#depositsFiduciaryModal').modal('show');
             }
         });
 }
 
 $("#depositsFiduciaryButton").click(function () {
     SendDepositFiduciary();
+
+
+}); function SendDepositCrypto() {
+
+    var postData = {
+        UserId: id
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Deposits/DepositsCryptoPartial",
+        data: JSON.stringify(postData),
+        contentType: 'application/json',
+        dataType: "html",
+        success: function (result) {
+            $('#depositsCryptoPartial').html(result);
+            $('#depositsCryptoModal').modal('show');
+        }
+    });
+}
+
+$("#depositsCryptoButton").click(function () {
+    SendDepositCrypto();
 });
 
+
+
 $(document).ready(function () {
-    var id = localStorage.getItem('Id');
-    $('#userIdHidden').val(id); // Set the value of the hidden input field
+    $('#userIdHidden').val(id); 
 });
 
 

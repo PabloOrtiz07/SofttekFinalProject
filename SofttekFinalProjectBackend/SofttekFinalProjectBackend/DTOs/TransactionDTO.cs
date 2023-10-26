@@ -6,7 +6,7 @@ namespace SofttekFinalProjectBackend.DTOs
 {
     public class TransactionDTO
     {
-
+        public int Id { get; set; }
         public TypeOfOperation TypeOfOperation { get; set; }
         public string descriptionOperation { get; set; }
         public double amount { get; set; }
@@ -14,6 +14,8 @@ namespace SofttekFinalProjectBackend.DTOs
         public TransfersCrypto? cryptoAccountOrigin { get; set; }
         public TransfersFiduciary? fiduciaryAccountDestination { get; set; }
         public TransfersCrypto? cryptoAccountDestination { get; set; }
+        public DateTime CreatedTimeUtc { get; set; }
+
 
     }
 }

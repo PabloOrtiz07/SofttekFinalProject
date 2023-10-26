@@ -9,7 +9,6 @@
       "SofttekFinalProjectFrontend/1.0.0": {
         "dependencies": {
           "Data": "1.0.0",
-          "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "System.IdentityModel.Tokens.Jwt": "7.0.3"
         },
         "runtime": {

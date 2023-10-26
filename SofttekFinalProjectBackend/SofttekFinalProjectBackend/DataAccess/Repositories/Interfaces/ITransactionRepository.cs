@@ -7,6 +7,8 @@ namespace SofttekFinalProjectBackend.DataAccess.Repositories.Interfaces
     public interface ITransactionRepository : IRepository<Transaction>
     {
         public Task<List<Transaction>> GetAllTransaction();
+        public Task<List<Transaction>> GetAllUserTransaction(int id);
+
 
     }
 }

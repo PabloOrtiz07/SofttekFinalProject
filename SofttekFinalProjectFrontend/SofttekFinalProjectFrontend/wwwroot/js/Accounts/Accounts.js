@@ -1,4 +1,5 @@
 ﻿var token = getCookie("Token");
+var id = getCookie("Id");
 
 function initializeDataTable(url, tableId, columns) {
     return new DataTable(tableId, {
@@ -20,7 +21,7 @@ const fiduciaryColumns = [
         data: function (data) {
             var buttons =
                 `<td>
-                    <a href='javascript:CheckTheBalance(${JSON.stringify(data)})'>
+                    <a href='javascript:CheckTheBalanceFiduciary(${JSON.stringify(data.cbu)})'>
                         <i class="fa-solid fa-eye checkTheBalance"></i>
                     </a>
                 </td>`
@@ -35,41 +36,79 @@ const fiduciaryColumns = [
 const cryptoColumns = [
     { data: 'uuid', title: 'UUID' },
     { data: 'nameOfCrypto', title: 'Crypto Name' },
-    { data: 'typeOfAccount', title: 'Type of Account' }
+    { data: 'typeOfAccount', title: 'Type of Account' },
+    {
+        data: function (data) {
+            var buttons =
+                `<td>
+                    <a href='javascript:CheckTheBalanceCrypto(${JSON.stringify(data.uuid)})'>
+                        <i class="fa-solid fa-eye checkTheBalance"></i>
+                    </a>
+                </td>`
+            return buttons;
+        }
+    }
 ];
 
-let tableFiduciary = initializeDataTable('https://localhost:7172/api/Accounts/1?parameter=0&pageSize=10&pageToShow=1', '#tableFiduciary', fiduciaryColumns);
-let tableCrypto = initializeDataTable('https://localhost:7172/api/Accounts/1?parameter=1&pageSize=10&pageToShow=1', '#tableCrypto', cryptoColumns);
+var tableFiduciary = initializeDataTable('https://localhost:7172/api/Accounts/' + id + '?parameter=0&pageSize=10&pageToShow=1', '#tableFiduciary', fiduciaryColumns);
+var tableCrypto = initializeDataTable('https://localhost:7172/api/Accounts/' + id + '?parameter=1&pageSize=10&pageToShow=1', '#tableCrypto', cryptoColumns);
 
-function CheckTheBalance() {
+function CheckTheBalanceFiduciary(cbu) {
     $.ajax({
         type: "GET",
-        url: "https://localhost:7172/api/Accounts?Cbu=CBU1&parameter=0&pageSize=10&pageToShow=1",
+        url: "https://localhost:7172/api/Accounts?name=" + cbu + "&parameter=0",
         dataType: "json",
         success: function (data) {
             console.log("Received data:", data);
 
-            // Update the modal content with the received data
             $('#cbu').text(data.data.cbu);
             $('#alias').text(data.data.alias);
             $('#accountNumber').text(data.data.accountNumber);
             $('#amount').text(data.data.amount);
+            var typeOfAccount = data.data.typeOfAccount;
 
-            // Show the modal
-            $('#userModal').modal('show');
+            var textToDisplay = '';
+            if (typeOfAccount === 0) {
+                textToDisplay = 'Pesos';
+            } else if (typeOfAccount === 1) {
+                textToDisplay = 'Dollar';
+            } else if (typeOfAccount === 2) {
+                textToDisplay = 'Crypto';
+            }
+            $('#typeOfAccount').text(textToDisplay);
+            $('#userModalFiduciary').modal('show');
         },
         error: function (error) {
             console.error('Error:', error);
         }
     });
 }
+function CheckTheBalanceCrypto(uuid) {
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7172/api/Accounts?name=" + uuid + "&parameter=1",
+        dataType: "json",
+        success: function (data) {
+            console.log("Received data:", data);
 
+            $('#uuid').text(data.data.uuid);
+            $('#nameOfCrypto').text(data.data.nameOfCrypto);
+            $('#amountCrypto').text(data.data.amount);
+            var typeOfAccount = data.data.typeOfAccount;
 
-
-
-
-
-
-
-
-
+            var textToDisplay = '';
+            if (typeOfAccount === 0) {
+                textToDisplay = 'Pesos';
+            } else if (typeOfAccount === 1) {
+                textToDisplay = 'Dollar';
+            } else if (typeOfAccount === 2) {
+                textToDisplay = 'Crypto';
+            }
+            $('#typeOfAccountCrypto').text(textToDisplay);
+            $('#userModalCrypto').modal('show');
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}

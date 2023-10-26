@@ -52,7 +52,8 @@ namespace SofttekFinalProjectBackend.Logic
                     IsDeleted = false,
                     DeletedTimeUtc = null,
                     fiduciaryAccountOriginId = idAccount,
-                    Amount = withDrawMoneyFiduciary.Amount
+                    Amount = withDrawMoneyFiduciary.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -93,8 +94,9 @@ namespace SofttekFinalProjectBackend.Logic
                     IsDeleted = false,
                     DeletedTimeUtc = null,
                     cryptoAccountOriginId = idAccount,
-                    Amount = withDrawMoneyCrypto.Amount
-                };
+                    Amount = withDrawMoneyCrypto.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
+            };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
             }
@@ -139,7 +141,9 @@ namespace SofttekFinalProjectBackend.Logic
                     IsDeleted = false,
                     DeletedTimeUtc = null,
                     fiduciaryAccountOriginId = idAccount,
-                    Amount = depositFiduciary.Amount
+                    Amount = depositFiduciary.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
+
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -181,7 +185,8 @@ namespace SofttekFinalProjectBackend.Logic
                     IsDeleted = false,
                     DeletedTimeUtc = null,
                     cryptoAccountOriginId = idAccount,
-                    Amount = depositCrypto.Amount
+                    Amount = depositCrypto.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -221,7 +226,8 @@ namespace SofttekFinalProjectBackend.Logic
                     IsDeleted = false,
                     DeletedTimeUtc = null,
                     cryptoAccountOriginId = idAccount,
-                    Amount = saleRequest.Amount
+                    Amount = saleRequest.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -281,7 +287,8 @@ namespace SofttekFinalProjectBackend.Logic
                     DeletedTimeUtc = null,
                     fiduciaryAccountOriginId = idAccountBuyer,
                     fiduciaryAccountDestinationId = idAccountSeller,
-                    Amount = saleFinding.Amount
+                    Amount = saleFinding.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -344,7 +351,8 @@ namespace SofttekFinalProjectBackend.Logic
                     DeletedTimeUtc = null,
                     fiduciaryAccountOriginId= idAccountOrigin,
                     fiduciaryAccountDestinationId = idAccountDestination,
-                    Amount = fiduciaryOrigin.Amount
+                    Amount = fiduciaryOrigin.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -408,7 +416,8 @@ namespace SofttekFinalProjectBackend.Logic
                     DeletedTimeUtc = null,
                     fiduciaryAccountOriginId = idAccountOrigin,
                     cryptoAccountDestinationId = idAccountDestination,
-                    Amount = fiduciaryOrigin.Amount
+                    Amount = fiduciaryOrigin.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -471,7 +480,8 @@ namespace SofttekFinalProjectBackend.Logic
                     DeletedTimeUtc = null,
                     fiduciaryAccountDestinationId = idAccountDestination,
                     cryptoAccountOriginId = idAccountOrigin,
-                    Amount = cryptoOrigin.Amount
+                    Amount = cryptoOrigin.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;
@@ -532,7 +542,8 @@ namespace SofttekFinalProjectBackend.Logic
                     DeletedTimeUtc = null,
                     cryptoAccountDestinationId = idAccountDestination,
                     cryptoAccountOriginId = idAccountOrigin,
-                    Amount = cryptoOrigin.Amount
+                    Amount = cryptoOrigin.Amount,
+                    CreatedTimeUtc = DateTime.UtcNow
                 };
                 await _unitOfWork.TransactionRepository.Insert(newTransaction);
                 return true;

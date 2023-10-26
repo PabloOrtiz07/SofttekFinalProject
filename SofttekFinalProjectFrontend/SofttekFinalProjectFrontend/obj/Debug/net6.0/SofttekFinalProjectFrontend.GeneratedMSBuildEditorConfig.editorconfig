@@ -9,65 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SofttekFinalProjectFrontend
 build_property.RootNamespace = SofttekFinalProjectFrontend
-build_property.ProjectDir = C:\Users\Pablo\Desktop\SofttekFinalProject\SofttekFinalProjectFrontend\SofttekFinalProjectFrontend\
+build_property.ProjectDir = C:\Users\Pablo\Desktop\NuevoFrontend\SofttekFinalProjectFrontend\SofttekFinalProjectFrontend\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Pablo\Desktop\SofttekFinalProject\SofttekFinalProjectFrontend\SofttekFinalProjectFrontend
+build_property.MSBuildProjectDirectory = C:\Users\Pablo\Desktop\NuevoFrontend\SofttekFinalProjectFrontend\SofttekFinalProjectFrontend
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Accounts/Accounts.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Accounts/Accounts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQWNjb3VudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Deposits/Deposits.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Deposits/Deposits.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdHNcRGVwb3NpdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Deposits/Partial/DepositsFiduciaryAddPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdHNcUGFydGlhbFxEZXBvc2l0c0ZpZHVjaWFyeUFkZFBhcnRpYWwuY3NodG1s
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Deposits/Partial/DepositsCryptoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdHNcUGFydGlhbFxEZXBvc2l0c0NyeXB0b1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Home/Index.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Deposits/Partial/DepositsFiduciaryPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdHNcUGFydGlhbFxEZXBvc2l0c0ZpZHVjaWFyeVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Login/Login.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Shared/Error.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Partial/TransfersFiduciaryAddPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJzXFBhcnRpYWxcVHJhbnNmZXJzRmlkdWNpYXJ5QWRkUGFydGlhbC5jc2h0bWw=
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transactions/Transactions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXFRyYW5zYWN0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Transfers.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Partial/TransfersCryptoToCryptoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJzXFBhcnRpYWxcVHJhbnNmZXJzQ3J5cHRvVG9DcnlwdG9QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Partial/TransfersCryptoToFiduciaryPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJzXFBhcnRpYWxcVHJhbnNmZXJzQ3J5cHRvVG9GaWR1Y2lhcnlQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Partial/TransfersFiduciaryToCryptoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJzXFBhcnRpYWxcVHJhbnNmZXJzRmlkdWNpYXJ5VG9DcnlwdG9QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Partial/TransfersFiduciaryToFiduciaryPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJzXFBhcnRpYWxcVHJhbnNmZXJzRmlkdWNpYXJ5VG9GaWR1Y2lhcnlQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Transfers/Transfers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJzXFRyYW5zZmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/WithDraws/Partial/WithDrawsFiduciaryAddPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aERyYXdzXFBhcnRpYWxcV2l0aERyYXdzRmlkdWNpYXJ5QWRkUGFydGlhbC5jc2h0bWw=
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/WithDraws/Partial/WithDrawsCryptoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aERyYXdzXFBhcnRpYWxcV2l0aERyYXdzQ3J5cHRvUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/WithDraws/WithDraws.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/WithDraws/Partial/WithDrawsFiduciaryPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aERyYXdzXFBhcnRpYWxcV2l0aERyYXdzRmlkdWNpYXJ5UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/WithDraws/WithDraws.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aERyYXdzXFdpdGhEcmF3cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/_ViewImports.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/_ViewStart.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pablo/Desktop/SofttekFinalProject/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Shared/_Layout.cshtml]
+[C:/Users/Pablo/Desktop/NuevoFrontend/SofttekFinalProjectFrontend/SofttekFinalProjectFrontend/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hkjgwyqo3o
