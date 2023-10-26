@@ -396,7 +396,7 @@ namespace SofttekFinalProjectBackend.Migrations
                         {
                             Id = 1,
                             Amount = 100.0,
-                            CreatedTimeUtc = new DateTime(2023, 10, 25, 21, 3, 7, 718, DateTimeKind.Utc).AddTicks(8576),
+                            CreatedTimeUtc = new DateTime(2023, 10, 26, 8, 24, 48, 19, DateTimeKind.Utc).AddTicks(9170),
                             IsDeleted = false,
                             TypeOfOperation = 0,
                             UserId = 1,
@@ -407,7 +407,7 @@ namespace SofttekFinalProjectBackend.Migrations
                         {
                             Id = 2,
                             Amount = 50.0,
-                            CreatedTimeUtc = new DateTime(2023, 10, 25, 21, 3, 7, 718, DateTimeKind.Utc).AddTicks(8584),
+                            CreatedTimeUtc = new DateTime(2023, 10, 26, 8, 24, 48, 19, DateTimeKind.Utc).AddTicks(9175),
                             IsDeleted = false,
                             TypeOfOperation = 1,
                             UserId = 2,

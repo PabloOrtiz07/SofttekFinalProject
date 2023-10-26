@@ -1,6 +1,0 @@
-﻿################################################################################
-# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
-################################################################################
-
-/SofttekFinalProjectBackend/SofttekFinalProjectBackend/appsettings.json
-/SofttekFinalProjectBackend/SofttekFinalProjectBackend/appsettings.Development.json

@@ -9,7 +9,7 @@
             Retrieves all accounts associated with a user.
             </summary>
             <param name="id">The unique identifier of the user.</param>
-            <param name="parameter">An optional parameter to specify the type of account (e.g., Fiduciary, Crypto).</param>
+            <param name="parameter">An optional parameter to specify the type of account (e.g. , Fiduciary, Crypto).</param>
             <param name="pageSize">An optional parameter to specify the page size for paginated results.</param>
             <param name="pageToShow">An optional parameter to specify the page number for paginated results.</param>
             <returns>A response containing the list of user accounts.</returns>
